@@ -1,4 +1,4 @@
-package com.excelsus.excelsior;
+package com.excelsus.excelsior.registries;
 
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
