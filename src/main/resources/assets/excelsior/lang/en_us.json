@@ -1,0 +1,31 @@
+{
+  "_": "->------------------------]  Game Elements  [------------------------<-",
+
+  "block.excelsior.chrome_ore": "Chrome Ore",
+  "item.excelsior.raw_chrome": "Raw Chrome",
+  "item.excelsior.crushed_chrome_ore": "Crushed Chrome",
+
+  "item.excelsior.stainless_steel_ingot": "Stainless Steel Ingot",
+
+  "item.excelsior.raw_uranium": "Raw Uranium",
+  "item.excelsior.crushed_uranium_ore": "Crushed Uranium",
+  "item.excelsior.depleted_uranium": "Depleted Uranium",
+  "item.excelsior.low_enriched_uranium": "Low Enriched Uranium",
+  "item.excelsior.high_enriched_uranium": "Highly Enriched Uranium",
+
+  "item.excelsior.fish_powder": "Fish Paste",
+  "item.excelsior.fish_dough": "Fish Dough",
+  "item.excelsior.fish_cake_raw": "Raw Fish Cake",
+  "item.excelsior.fish_cake": "Fish Cake",
+  "item.excelsior.fish_cake_soup": "Fish Cake Soup",
+
+  "item.excelsior.yellow_cake": "Yellow Cake",
+
+  "block.excelsior.centrifuge": "Mechanical Centrifuge",
+
+  "_": "->------------------------]  UI & Messages  [------------------------<-",
+
+  "itemGroup.excelsior": "Excelsior",
+
+  "_": "Thank you for translating Excelsior!"
+}
