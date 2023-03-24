@@ -1,4 +1,4 @@
-package com.excelsus.excelsior.content.centrifuge;
+package com.excelsus.excelsior.content.blocks.centrifuge;
 
 import static com.excelsus.excelsior.content.ExcelsiorTileEntities.*;
 
@@ -49,9 +49,9 @@ public class CentrifugeBlock extends KineticBlock implements ITE<CentrifugeTileE
 	@Override
 	public InteractionResult use(BlockState state, Level worldIn, BlockPos pos, Player player, InteractionHand handIn,
 		BlockHitResult hit) {
-		if (!player.getItemInHand(handIn)
-			.isEmpty())
+		if (!player.getItemInHand(handIn).isEmpty()){
 			return InteractionResult.PASS;
+		}
 		if (worldIn.isClientSide)
 			return InteractionResult.SUCCESS;
 

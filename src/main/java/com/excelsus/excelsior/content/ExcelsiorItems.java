@@ -1,6 +1,6 @@
 package com.excelsus.excelsior.content;
 
-import static com.excelsus.excelsior.Excelsior.*;
+import static com.excelsus.excelsior.Excelsior.REGISTRATE;
 import static com.simibubi.create.AllTags.*;
 import static com.simibubi.create.AllTags.AllItemTags.*;
 import static com.simibubi.create.content.AllSections.*;
@@ -10,7 +10,9 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 
 import com.excelsus.excelsior.Excelsior;
+import com.excelsus.excelsior.content.item.DebugIngotItem;
 import com.simibubi.create.content.curiosities.CombustibleItem;
+import com.simibubi.create.foundation.data.AssetLookup;
 import com.tterrag.registrate.util.entry.ItemEntry;
 
 public class ExcelsiorItems {
@@ -58,6 +60,16 @@ public class ExcelsiorItems {
 	public static final ItemEntry<Item>
 		CRUSHED_CHROME = taggedIngredient("crushed_chrome_ore", CRUSHED_ORES.tag),
 		CRUSHED_URANIUM = taggedIngredient("crushed_uranium_ore", CRUSHED_ORES.tag);
+
+	static {
+		REGISTRATE.startSection(CURIOSITIES);
+	}
+
+	public static final ItemEntry<DebugIngotItem> DEBUG_INGOT =
+		REGISTRATE.item("debug_ingot", DebugIngotItem::new)
+			.properties(p -> p.stacksTo(1))
+			.model(AssetLookup.itemModelWithPartials())
+			.register();
 
 	// Shortcuts
 	private static ItemEntry<Item> ingredient(String name) {

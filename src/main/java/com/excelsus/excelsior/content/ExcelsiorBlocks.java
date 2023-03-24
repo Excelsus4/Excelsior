@@ -1,7 +1,6 @@
 package com.excelsus.excelsior.content;
 
 import static com.excelsus.excelsior.Excelsior.REGISTRATE;
-import static com.simibubi.create.AllTags.*;
 import static com.simibubi.create.foundation.data.ModelGen.*;
 import static com.simibubi.create.foundation.data.TagGen.pickaxeOnly;
 import static com.simibubi.create.foundation.data.TagGen.tagBlockAndItem;
@@ -17,9 +16,8 @@ import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraftforge.common.Tags;
 
 import com.excelsus.excelsior.Excelsior;
-import com.excelsus.excelsior.content.centrifuge.CentrifugeBlock;
+import com.excelsus.excelsior.content.blocks.centrifuge.CentrifugeBlock;
 import com.simibubi.create.AllItems;
-import com.simibubi.create.Create;
 import com.simibubi.create.content.AllSections;
 import com.simibubi.create.foundation.block.BlockStressDefaults;
 import com.simibubi.create.foundation.data.AssetLookup;

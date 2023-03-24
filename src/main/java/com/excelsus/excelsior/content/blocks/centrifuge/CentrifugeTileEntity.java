@@ -1,4 +1,4 @@
-package com.excelsus.excelsior.content.centrifuge;
+package com.excelsus.excelsior.content.blocks.centrifuge;
 
 import java.util.List;
 import java.util.Optional;
@@ -50,7 +50,7 @@ public class CentrifugeTileEntity extends KineticTileEntity {
 	public void addBehaviours(List<TileEntityBehaviour> behaviours) {
 		behaviours.add(new DirectBeltInputBehaviour(this));
 		super.addBehaviours(behaviours);
-		registerAwardables(behaviours, AllAdvancements.MILLSTONE);
+		//registerAwardables(behaviours, AllAdvancements.MILLSTONE);
 	}
 
 	@Override

@@ -1,7 +1,7 @@
 package com.excelsus.excelsior.content;
 
 import com.excelsus.excelsior.Excelsior;
-import com.excelsus.excelsior.content.centrifuge.CentrifugeTileEntity;
+import com.excelsus.excelsior.content.blocks.centrifuge.CentrifugeTileEntity;
 import com.simibubi.create.content.contraptions.components.millstone.MillStoneCogInstance;
 import com.simibubi.create.content.contraptions.components.millstone.MillstoneRenderer;
 import com.tterrag.registrate.util.entry.BlockEntityEntry;

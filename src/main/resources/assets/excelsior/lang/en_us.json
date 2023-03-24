@@ -22,6 +22,8 @@
 
   "item.excelsior.yellow_cake": "Yellow Cake",
 
+  "item.excelsior.debug_ingot": "DEBUG INGOT",
+
   "block.excelsior.centrifuge": "Mechanical Centrifuge",
 
   "_": "->------------------------]  UI & Messages  [------------------------<-",
