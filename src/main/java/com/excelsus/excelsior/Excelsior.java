@@ -1,9 +1,13 @@
 package com.excelsus.excelsior;
 
-import com.excelsus.excelsior.registries.AllBlocks;
-import com.excelsus.excelsior.registries.AllItems;
+import com.excelsus.excelsior.content.ExcelsiorItemGroup;
+import com.excelsus.excelsior.content.ExcelsiorBlocks;
+import com.excelsus.excelsior.content.ExcelsiorItems;
+import com.excelsus.excelsior.content.ExcelsiorTileEntities;
 import com.mojang.logging.LogUtils;
+import com.simibubi.create.foundation.data.CreateRegistrate;
 
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -16,17 +20,27 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 import org.slf4j.Logger;
 
-@Mod(Excelsior.MODID)
+@Mod(Excelsior.ID)
 public class Excelsior
 {
-    public static final String MODID = "excelsior";
+    public static final String ID = "excelsior";
+    public static final String NAME = "Excelsior";
     private static final Logger LOGGER = LogUtils.getLogger();
-    public Excelsior()
-    {
+    public static final CreateRegistrate REGISTRATE = CreateRegistrate.create(ID);
+    public static final CreativeModeTab EXCELSIOR_CREATIVE_TAB = new ExcelsiorItemGroup();
+
+    public Excelsior() {
+        onCtor();
+    }
+
+    public void onCtor() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        AllItems.register(modEventBus);
-        AllBlocks.register(modEventBus);
+        REGISTRATE.registerEventListeners(modEventBus);
+
+        ExcelsiorBlocks.register();
+        ExcelsiorItems.register();
+        ExcelsiorTileEntities.register();
 
         modEventBus.addListener(this::commonSetup);
 
@@ -35,9 +49,6 @@ public class Excelsior
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
-        // Some common setup code
-        // LOGGER.info("HELLO FROM COMMON SETUP");
-        // LOGGER.info("DIRT BLOCK >> {}", ForgeRegistries.BLOCKS.getKey(Blocks.DIRT));
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
@@ -49,7 +60,7 @@ public class Excelsior
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-    @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    @Mod.EventBusSubscriber(modid = ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents
     {
         @SubscribeEvent
