@@ -7,9 +7,14 @@ import static com.simibubi.create.content.AllSections.*;
 
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.registries.RegistryObject;
 
 import com.excelsus.excelsior.Excelsior;
+import com.excelsus.excelsior.content.item.CastorSeedItem;
 import com.excelsus.excelsior.content.item.DebugIngotItem;
 import com.simibubi.create.content.curiosities.CombustibleItem;
 import com.simibubi.create.foundation.data.AssetLookup;
@@ -68,6 +73,12 @@ public class ExcelsiorItems {
 	public static final ItemEntry<DebugIngotItem> DEBUG_INGOT =
 		REGISTRATE.item("debug_ingot", DebugIngotItem::new)
 			.properties(p -> p.stacksTo(1))
+			.model(AssetLookup.itemModelWithPartials())
+			.register();
+
+	public static final ItemEntry<CastorSeedItem> CASTOR_SEEDS =
+		REGISTRATE.item("castor_seeds", CastorSeedItem::new)
+			.properties(p -> p.stacksTo(64))
 			.model(AssetLookup.itemModelWithPartials())
 			.register();
 

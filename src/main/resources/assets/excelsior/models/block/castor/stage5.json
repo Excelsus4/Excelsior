@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "excelsior:block/castor_stage5"
+  },
+  "render_type": "cutout"
+}

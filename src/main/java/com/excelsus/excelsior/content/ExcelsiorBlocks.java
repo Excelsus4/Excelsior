@@ -16,6 +16,7 @@ import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraftforge.common.Tags;
 
 import com.excelsus.excelsior.Excelsior;
+import com.excelsus.excelsior.content.blocks.castor.CastorPlantBlock;
 import com.excelsus.excelsior.content.blocks.centrifuge.CentrifugeBlock;
 import com.simibubi.create.AllItems;
 import com.simibubi.create.content.AllSections;
@@ -63,6 +64,10 @@ public class ExcelsiorBlocks {
 		.transform(BlockStressDefaults.setImpact(16.0))
 		.item()
 		.transform(customItemModel())
+		.register();
+
+	public static final BlockEntry<CastorPlantBlock> CASTOR_PLANT = REGISTRATE.block("castor_plant", CastorPlantBlock::new)
+		.initialProperties(() -> Blocks.WHEAT)
 		.register();
 
 	// Load this class
