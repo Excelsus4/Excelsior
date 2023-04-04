@@ -1,88 +1,86 @@
 package com.excelsus.excelsior;
 
-import com.excelsus.excelsior.content.ExcelsiorItemGroup;
-import com.excelsus.excelsior.content.ExcelsiorBlocks;
-import com.excelsus.excelsior.content.ExcelsiorItems;
-import com.excelsus.excelsior.content.ExcelsiorTileEntities;
-import com.excelsus.excelsior.data.recipe.StandardRecipeGen;
-import com.mojang.logging.LogUtils;
-import com.simibubi.create.foundation.data.CreateRegistrate;
+import org.slf4j.Logger;
 
 import net.minecraft.data.DataGenerator;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
+import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
-import org.slf4j.Logger;
+import com.excelsus.excelsior.content.ExcelsiorBlocks;
+import com.excelsus.excelsior.content.ExcelsiorItemGroup;
+import com.excelsus.excelsior.content.ExcelsiorItems;
+import com.excelsus.excelsior.content.ExcelsiorTileEntities;
+import com.excelsus.excelsior.data.recipe.StandardRecipeGen;
+import com.mojang.logging.LogUtils;
+import com.simibubi.create.foundation.data.CreateRegistrate;
 
 @Mod(Excelsior.ID)
-public class Excelsior
-{
-    public static final String ID = "excelsior";
-    public static final String NAME = "Excelsior";
-    public static final Logger LOGGER = LogUtils.getLogger();
-    public static final CreateRegistrate REGISTRATE = CreateRegistrate.create(ID);
-    public static final CreativeModeTab EXCELSIOR_CREATIVE_TAB = new ExcelsiorItemGroup();
+public class Excelsior {
+	public static final String ID = "excelsior";
+	public static final String NAME = "Excelsior";
+	public static final Logger LOGGER = LogUtils.getLogger();
+	public static final CreateRegistrate REGISTRATE = CreateRegistrate.create(ID);
+	public static final CreativeModeTab EXCELSIOR_CREATIVE_TAB = new ExcelsiorItemGroup();
 
-    public Excelsior() {
-        onCtor();
-    }
+	public Excelsior() {
+		onCtor();
+	}
 
-    public void onCtor() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+	public void onCtor() {
+		IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        REGISTRATE.registerEventListeners(modEventBus);
+		REGISTRATE.registerEventListeners(modEventBus);
 
-        ExcelsiorBlocks.register();
-        ExcelsiorItems.register();
-        ExcelsiorTileEntities.register();
+		ExcelsiorBlocks.register();
+		ExcelsiorItems.register();
+		ExcelsiorTileEntities.register();
 
+		modEventBus.addListener(this::commonSetup);
+		modEventBus.addListener(EventPriority.LOWEST, Excelsior::gatherData);
 
-        modEventBus.addListener(this::commonSetup);
-        modEventBus.addListener(EventPriority.LOWEST, Excelsior::gatherData);
+		MinecraftForge.EVENT_BUS.register(this);
+	}
 
-        MinecraftForge.EVENT_BUS.register(this);
-    }
+	private void commonSetup(final FMLCommonSetupEvent event) {
+	}
 
-    private void commonSetup(final FMLCommonSetupEvent event)
-    {
-    }
+	// You can use SubscribeEvent and let the Event Bus discover methods to call
+	@SubscribeEvent
+	public void onServerStarting(ServerStartingEvent event) {
+		// Do something when the server starts
+		// LOGGER.info("HELLO from server starting");
+	}
 
-    // You can use SubscribeEvent and let the Event Bus discover methods to call
-    @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event)
-    {
-        // Do something when the server starts
-        // LOGGER.info("HELLO from server starting");
-    }
+	// You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
+	@Mod.EventBusSubscriber(modid = ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+	public static class ClientModEvents {
+		@SubscribeEvent
+		public static void onClientSetup(FMLClientSetupEvent event) {
+			// Some client setup code
+			// LOGGER.info("HELLO FROM CLIENT SETUP");
+			// LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+		}
+	}
 
-    // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-    @Mod.EventBusSubscriber(modid = ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents
-    {
-        @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event)
-        {
-            // Some client setup code
-            // LOGGER.info("HELLO FROM CLIENT SETUP");
-            // LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
-        }
-    }
+	public static void gatherData(GatherDataEvent event) {
+		DataGenerator gen = event.getGenerator();
+		if (event.includeServer()) {
+			gen.addProvider(true, new StandardRecipeGen(gen));
+		}
+	}
 
-    public static void gatherData(GatherDataEvent event) {
-        DataGenerator gen = event.getGenerator();
-        if(event.includeServer()) {
-            gen.addProvider(true, new StandardRecipeGen(gen));
-        }
-    }
+	public static ResourceLocation asResource(String path) {
+		return new ResourceLocation(ID, path);
+	}
 }

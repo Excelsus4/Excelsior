@@ -1,10 +1,10 @@
 package com.excelsus.excelsior.content;
 
-import static com.excelsus.excelsior.Excelsior.REGISTRATE;
+import static com.excelsus.excelsior.Excelsior.*;
 import static com.simibubi.create.foundation.data.ModelGen.*;
-import static com.simibubi.create.foundation.data.TagGen.pickaxeOnly;
-import static com.simibubi.create.foundation.data.TagGen.tagBlockAndItem;
+import static com.simibubi.create.foundation.data.TagGen.*;
 
+import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
@@ -13,6 +13,9 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.Tags;
 
 import com.excelsus.excelsior.Excelsior;
@@ -82,10 +85,30 @@ public class ExcelsiorBlocks {
 		REGISTRATE.startSection(ExcelsiorSections.getCastor());
 	}
 
-	public static final BlockEntry<CastorPlantBlock> CASTOR_PLANT = REGISTRATE.block("castor_plant", CastorPlantBlock::new)
+	public static final BlockEntry<CastorPlantBlock> CASTOR_PLANT = REGISTRATE.block("castor_plant",
+			CastorPlantBlock::new)
 		.initialProperties(() -> Blocks.WHEAT)
+		.blockstate((c, p) -> {
+			ModelFile[] stageModels = new ModelFile[c.get().getMaxAge() + 1];
+			for (int i = 0; i < c.get().getMaxAge() + 1; i++) {
+				stageModels[i] = p.models().getExistingFile(p.modLoc("block/castor/stage" + i));
+			}
+			p.getVariantBuilder(c.get())
+				.forAllStates(state -> {
+					int age = state.getValue(CastorPlantBlock.AGE);
+					return ConfiguredModel.builder()
+						.modelFile(stageModels[age])
+						.build();
+				});
+		})
+		.loot((lt, b) -> lt.add(b, RegistrateBlockLootTables.createCropDrops(b,
+			ExcelsiorItems.CASTOR_SEEDS.get(), ExcelsiorItems.CASTOR_SEEDS.get(),
+			LootItemBlockStatePropertyCondition.hasBlockStateProperties(b).
+				setProperties(StatePropertiesPredicate.Builder.properties()
+					.hasProperty(CastorPlantBlock.AGE, CastorPlantBlock.MAX_AGE)))))
 		.register();
 
 	// Load this class
-	public static void register() {}
+	public static void register() {
+	}
 }

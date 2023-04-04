@@ -27,15 +27,14 @@ import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
 import net.minecraftforge.common.crafting.conditions.NotCondition;
 
+import com.excelsus.excelsior.Excelsior;
 import com.excelsus.excelsior.content.ExcelsiorBlocks;
 import com.excelsus.excelsior.content.ExcelsiorItems;
 import com.google.common.base.Supplier;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import com.simibubi.create.Create;
 import com.simibubi.create.content.AllSections;
 import com.simibubi.create.foundation.data.recipe.CompatMetals;
-import com.simibubi.create.foundation.data.recipe.CreateRecipeProvider;
 import com.simibubi.create.foundation.data.recipe.Mods;
 import com.simibubi.create.foundation.utility.Lang;
 import com.simibubi.create.foundation.utility.RegisteredObjects;
@@ -84,7 +83,7 @@ public class StandardRecipeGen extends ExcelsiorRecipeProvider {
 
 	GeneratedRecipe createSpecial(Supplier<? extends SimpleRecipeSerializer<?>> serializer, String recipeType,
 		String path) {
-		ResourceLocation location = Create.asResource(recipeType + "/" + currentFolder + "/" + path);
+		ResourceLocation location = Excelsior.asResource(recipeType + "/" + currentFolder + "/" + path);
 		return register(consumer -> {
 			SpecialRecipeBuilder b = SpecialRecipeBuilder.special(serializer.get());
 			b.save(consumer, location.toString());
@@ -249,11 +248,11 @@ public class StandardRecipeGen extends ExcelsiorRecipeProvider {
 		}
 
 		private ResourceLocation createSimpleLocation(String recipeType) {
-			return Create.asResource(recipeType + "/" + getRegistryName().getPath() + suffix);
+			return Excelsior.asResource(recipeType + "/" + getRegistryName().getPath() + suffix);
 		}
 
 		private ResourceLocation createLocation(String recipeType) {
-			return Create.asResource(recipeType + "/" + path + "/" + getRegistryName().getPath() + suffix);
+			return Excelsior.asResource(recipeType + "/" + path + "/" + getRegistryName().getPath() + suffix);
 		}
 
 		private ResourceLocation getRegistryName() {
@@ -333,7 +332,7 @@ public class StandardRecipeGen extends ExcelsiorRecipeProvider {
 
 					SimpleCookingRecipeBuilder b = builder.apply(
 						SimpleCookingRecipeBuilder.cooking(ingredient.get(), isOtherMod ? Items.DIRT : result.get(),
-							exp, (int) (cookingTime * cookingTimeModifier), serializer));
+							exp, (int)(cookingTime * cookingTimeModifier), serializer));
 					if (unlockedBy != null)
 						b.unlockedBy("has_item", inventoryTrigger(unlockedBy.get()));
 					b.save(result -> {
