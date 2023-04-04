@@ -22,7 +22,6 @@ import net.minecraft.world.level.ItemLike;
 
 import com.excelsus.excelsior.Excelsior;
 import com.excelsus.excelsior.compat.jei.category.CentrifugingCategory;
-import com.excelsus.excelsior.compat.jei.category.ExcelsiorRecipeCategory;
 import com.excelsus.excelsior.content.ExcelsiorBlocks;
 import com.excelsus.excelsior.content.ExcelsiorItems;
 import com.excelsus.excelsior.content.ExcelsiorRecipeTypes;
@@ -32,6 +31,7 @@ import com.simibubi.create.compat.jei.EmptyBackground;
 import com.simibubi.create.compat.jei.GhostIngredientHandler;
 import com.simibubi.create.compat.jei.ItemIcon;
 import com.simibubi.create.compat.jei.SlotMover;
+import com.simibubi.create.compat.jei.category.CreateRecipeCategory;
 import com.simibubi.create.content.contraptions.components.crusher.AbstractCrushingRecipe;
 import com.simibubi.create.content.curiosities.tools.BlueprintScreen;
 import com.simibubi.create.content.logistics.item.LinkedControllerScreen;
@@ -62,14 +62,14 @@ import mezz.jei.api.runtime.IIngredientManager;
 public class ExcelsiorJEI implements IModPlugin {
 	private static final ResourceLocation ID = Excelsior.asResource("jei_plugin");
 
-	private final List<ExcelsiorRecipeCategory<?>> excelsiorRecipeCategories = new ArrayList<>();
+	private final List<CreateRecipeCategory<?>> excelsiorRecipeCategories = new ArrayList<>();
 
 	private IIngredientManager ingredientManager;
 
 	private void loadCategories() {
 		excelsiorRecipeCategories.clear();
 
-		ExcelsiorRecipeCategory<?>
+		CreateRecipeCategory<?>
 
 		centrifuging = builder(AbstractCrushingRecipe.class)
 				.addTypedRecipes(ExcelsiorRecipeTypes.CENTRIFUGING)
@@ -256,7 +256,7 @@ public class ExcelsiorJEI implements IModPlugin {
 			return this;
 		}
 
-		public ExcelsiorRecipeCategory<T> build(String name, ExcelsiorRecipeCategory.Factory<T> factory) {
+		public CreateRecipeCategory<T> build(String name, CreateRecipeCategory.Factory<T> factory) {
 			Supplier<List<T>> recipesSupplier;
 			if (predicate.test(AllConfigs.SERVER.recipes)) {
 				recipesSupplier = () -> {
@@ -269,10 +269,10 @@ public class ExcelsiorJEI implements IModPlugin {
 				recipesSupplier = () -> Collections.emptyList();
 			}
 
-			ExcelsiorRecipeCategory.Info<T> info = new ExcelsiorRecipeCategory.Info<>(
+			CreateRecipeCategory.Info<T> info = new CreateRecipeCategory.Info<>(
 				new mezz.jei.api.recipe.RecipeType<>(Excelsior.asResource(name), recipeClass),
 				Lang.translateDirect("recipe." + name), background, icon, recipesSupplier, catalysts);
-			ExcelsiorRecipeCategory<T> category = factory.create(info);
+			CreateRecipeCategory<T> category = factory.create(info);
 			excelsiorRecipeCategories.add(category);
 			return category;
 		}

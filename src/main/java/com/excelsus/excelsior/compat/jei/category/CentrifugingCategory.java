@@ -6,6 +6,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 import com.excelsus.excelsior.compat.jei.category.animations.AnimatedCentrifuge;
 import com.mojang.blaze3d.vertex.PoseStack;
+import com.simibubi.create.compat.jei.category.CreateRecipeCategory;
 import com.simibubi.create.content.contraptions.components.crusher.AbstractCrushingRecipe;
 import com.simibubi.create.content.contraptions.processing.ProcessingOutput;
 import com.simibubi.create.foundation.gui.AllGuiTextures;
@@ -16,7 +17,7 @@ import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 
 @ParametersAreNonnullByDefault
-public class CentrifugingCategory extends ExcelsiorRecipeCategory<AbstractCrushingRecipe> {
+public class CentrifugingCategory extends CreateRecipeCategory<AbstractCrushingRecipe> {
 	private final AnimatedCentrifuge centrifuge = new AnimatedCentrifuge();
 
 	public CentrifugingCategory(Info<AbstractCrushingRecipe> info) { super(info); }
