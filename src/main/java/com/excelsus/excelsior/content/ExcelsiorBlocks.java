@@ -18,7 +18,6 @@ import net.minecraftforge.common.Tags;
 import com.excelsus.excelsior.Excelsior;
 import com.excelsus.excelsior.content.blocks.castor.CastorPlantBlock;
 import com.excelsus.excelsior.content.blocks.centrifuge.CentrifugeBlock;
-import com.simibubi.create.AllItems;
 import com.simibubi.create.content.AllSections;
 import com.simibubi.create.foundation.block.BlockStressDefaults;
 import com.simibubi.create.foundation.data.AssetLookup;
@@ -43,12 +42,25 @@ public class ExcelsiorBlocks {
 		.transform(pickaxeOnly())
 		.loot((lt, b) -> lt.add(b,
 			RegistrateBlockLootTables.createSilkTouchDispatchTable(b,
-				RegistrateBlockLootTables.applyExplosionDecay(b, LootItem.lootTableItem(AllItems.RAW_ZINC.get())
+				RegistrateBlockLootTables.applyExplosionDecay(b, LootItem.lootTableItem(ExcelsiorItems.RAW_CHROME.get())
 					.apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))))))
 		.tag(BlockTags.NEEDS_IRON_TOOL)
 		.tag(Tags.Blocks.ORES)
 		.transform(tagBlockAndItem("ores/chrome", "ores_in_ground/stone"))
 		.tag(Tags.Items.ORES)
+		.build()
+		.register();
+
+	public static final BlockEntry<Block> RAW_CHROME_BLOCK = REGISTRATE.block("raw_chrome_block", Block::new)
+		.initialProperties(() -> Blocks.RAW_GOLD_BLOCK)
+		.properties(p -> p.color(MaterialColor.GLOW_LICHEN))
+		.properties(p -> p.requiresCorrectToolForDrops())
+		.transform(pickaxeOnly())
+		.tag(Tags.Blocks.STORAGE_BLOCKS)
+		.tag(BlockTags.NEEDS_IRON_TOOL)
+		.lang("Block of Raw Chrome")
+		.transform(tagBlockAndItem("storage_blocks/raw_chrome"))
+		.tag(Tags.Items.STORAGE_BLOCKS)
 		.build()
 		.register();
 

@@ -4,12 +4,18 @@ import com.excelsus.excelsior.content.ExcelsiorItemGroup;
 import com.excelsus.excelsior.content.ExcelsiorBlocks;
 import com.excelsus.excelsior.content.ExcelsiorItems;
 import com.excelsus.excelsior.content.ExcelsiorTileEntities;
+import com.excelsus.excelsior.content.ExcelsiorVillagers;
+import com.excelsus.excelsior.data.DataGenerators;
+import com.excelsus.excelsior.data.recipe.StandardRecipeGen;
 import com.mojang.logging.LogUtils;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 
+import net.minecraft.data.DataGenerator;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.data.event.GatherDataEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -25,7 +31,7 @@ public class Excelsior
 {
     public static final String ID = "excelsior";
     public static final String NAME = "Excelsior";
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
     public static final CreateRegistrate REGISTRATE = CreateRegistrate.create(ID);
     public static final CreativeModeTab EXCELSIOR_CREATIVE_TAB = new ExcelsiorItemGroup();
 
@@ -42,7 +48,9 @@ public class Excelsior
         ExcelsiorItems.register();
         ExcelsiorTileEntities.register();
 
+
         modEventBus.addListener(this::commonSetup);
+        modEventBus.addListener(EventPriority.LOWEST, Excelsior::gatherData);
 
         MinecraftForge.EVENT_BUS.register(this);
     }
@@ -69,6 +77,13 @@ public class Excelsior
             // Some client setup code
             // LOGGER.info("HELLO FROM CLIENT SETUP");
             // LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+        }
+    }
+
+    public static void gatherData(GatherDataEvent event) {
+        DataGenerator gen = event.getGenerator();
+        if(event.includeServer()) {
+            gen.addProvider(true, new StandardRecipeGen(gen));
         }
     }
 }
