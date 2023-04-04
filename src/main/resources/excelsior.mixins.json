@@ -6,8 +6,8 @@
   "mixins": [
   ],
   "client": [
-    "ExcelsiorMixin",
-    "AllSectionsMixin"
+    "AllSectionsMixin",
+    "AllRecipeTypesMixin"
   ],
   "injectors": {
     "defaultRequire": 1

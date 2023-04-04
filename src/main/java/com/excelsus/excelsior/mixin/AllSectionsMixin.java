@@ -23,7 +23,7 @@ public class AllSectionsMixin {
 	private static AllSections[] $VALUES;
 
 	static {
-		ExcelsiorSections.setCastor(sectionsExpansion$addVariant("CASTOR", Palette.Green));
+		ExcelsiorSections.CASTOR = sectionsExpansion$addVariant("CASTOR", Palette.Green);
 	}
 
 	@Invoker("<init>")

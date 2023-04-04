@@ -77,7 +77,7 @@ public class ExcelsiorItems {
 			.register();
 
 	static {
-		REGISTRATE.startSection(ExcelsiorSections.getCastor());
+		REGISTRATE.startSection(ExcelsiorSections.CASTOR);
 	}
 
 	public static final ItemEntry<CastorSeedItem> CASTOR_SEEDS =

@@ -9,6 +9,6 @@ import com.simibubi.create.content.AllSections;
 public class ExcelsiorVillagers {
 
 	static {
-		REGISTRATE.startSection(ExcelsiorSections.getCastor());
+		REGISTRATE.startSection(ExcelsiorSections.CASTOR);
 	}
 }

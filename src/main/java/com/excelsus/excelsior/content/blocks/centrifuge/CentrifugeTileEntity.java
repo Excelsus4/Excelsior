@@ -23,10 +23,8 @@ import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.wrapper.CombinedInvWrapper;
 import net.minecraftforge.items.wrapper.RecipeWrapper;
 
-import com.simibubi.create.AllRecipeTypes;
+import com.excelsus.excelsior.content.ExcelsiorRecipeTypes;
 import com.simibubi.create.content.contraptions.base.KineticTileEntity;
-import com.simibubi.create.content.contraptions.components.millstone.MillingRecipe;
-import com.simibubi.create.foundation.advancement.AllAdvancements;
 import com.simibubi.create.foundation.sound.SoundScapes;
 import com.simibubi.create.foundation.tileEntity.TileEntityBehaviour;
 import com.simibubi.create.foundation.tileEntity.behaviour.belt.DirectBeltInputBehaviour;
@@ -37,7 +35,7 @@ public class CentrifugeTileEntity extends KineticTileEntity {
 	public ItemStackHandler outputInv;
 	public LazyOptional<IItemHandler> capability;
 	public int timer;
-	private MillingRecipe lastRecipe;
+	private CentrifugingRecipe lastRecipe;
 
 	public CentrifugeTileEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
 		super(type, pos, state);
@@ -97,7 +95,7 @@ public class CentrifugeTileEntity extends KineticTileEntity {
 
 		RecipeWrapper inventoryIn = new RecipeWrapper(inputInv);
 		if (lastRecipe == null || !lastRecipe.matches(inventoryIn, level)) {
-			Optional<MillingRecipe> recipe = AllRecipeTypes.MILLING.find(inventoryIn, level);
+			Optional<CentrifugingRecipe> recipe = ExcelsiorRecipeTypes.CENTRIFUGING.find(inventoryIn, level);
 			if (!recipe.isPresent()) {
 				timer = 100;
 				sendData();
@@ -117,7 +115,7 @@ public class CentrifugeTileEntity extends KineticTileEntity {
 		RecipeWrapper inventoryIn = new RecipeWrapper(inputInv);
 
 		if (lastRecipe == null || !lastRecipe.matches(inventoryIn, level)) {
-			Optional<MillingRecipe> recipe = AllRecipeTypes.MILLING.find(inventoryIn, level);
+			Optional<CentrifugingRecipe> recipe = ExcelsiorRecipeTypes.CENTRIFUGING.find(inventoryIn, level);
 			if (!recipe.isPresent())
 				return;
 			lastRecipe = recipe.get();
@@ -184,7 +182,7 @@ public class CentrifugeTileEntity extends KineticTileEntity {
 
 		if (lastRecipe != null && lastRecipe.matches(inventoryIn, level))
 			return true;
-		return AllRecipeTypes.MILLING.find(inventoryIn, level)
+		return ExcelsiorRecipeTypes.CENTRIFUGING.find(inventoryIn, level)
 			.isPresent();
 	}
 

@@ -42,7 +42,7 @@ import com.tterrag.registrate.util.entry.BlockEntry;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import com.tterrag.registrate.util.entry.ItemProviderEntry;
 
-public class StandardRecipeGen extends ExcelsiorRecipeProvider {
+public class ExcelsiorStandardRecipeGen extends ExcelsiorRecipeProvider {
 	private Marker MATERIALS = enterSection(AllSections.MATERIALS);
 	GeneratedRecipe
 
@@ -351,7 +351,7 @@ public class StandardRecipeGen extends ExcelsiorRecipeProvider {
 		return "Excelsior's Standard Recipes";
 	}
 
-	public StandardRecipeGen(DataGenerator pDataGenerator) {
+	public ExcelsiorStandardRecipeGen(DataGenerator pDataGenerator) {
 		super(pDataGenerator);
 	}
 

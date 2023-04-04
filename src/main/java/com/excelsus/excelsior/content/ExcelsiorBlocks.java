@@ -82,7 +82,7 @@ public class ExcelsiorBlocks {
 		.register();
 
 	static {
-		REGISTRATE.startSection(ExcelsiorSections.getCastor());
+		REGISTRATE.startSection(ExcelsiorSections.CASTOR);
 	}
 
 	public static final BlockEntry<CastorPlantBlock> CASTOR_PLANT = REGISTRATE.block("castor_plant",

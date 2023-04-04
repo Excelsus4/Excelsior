@@ -21,7 +21,8 @@ import com.excelsus.excelsior.content.ExcelsiorBlocks;
 import com.excelsus.excelsior.content.ExcelsiorItemGroup;
 import com.excelsus.excelsior.content.ExcelsiorItems;
 import com.excelsus.excelsior.content.ExcelsiorTileEntities;
-import com.excelsus.excelsior.data.recipe.StandardRecipeGen;
+import com.excelsus.excelsior.data.recipe.ExcelsiorProcessingRecipeGen;
+import com.excelsus.excelsior.data.recipe.ExcelsiorStandardRecipeGen;
 import com.mojang.logging.LogUtils;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 
@@ -76,7 +77,8 @@ public class Excelsior {
 	public static void gatherData(GatherDataEvent event) {
 		DataGenerator gen = event.getGenerator();
 		if (event.includeServer()) {
-			gen.addProvider(true, new StandardRecipeGen(gen));
+			gen.addProvider(true, new ExcelsiorStandardRecipeGen(gen));
+			ExcelsiorProcessingRecipeGen.registerAll(gen);
 		}
 	}
 
