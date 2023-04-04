@@ -64,8 +64,8 @@ public class ExcelsiorItems {
 			CREATE_INGOTS.tag);
 
 	public static final ItemEntry<Item>
-		CRUSHED_CHROME = taggedIngredient("crushed_chrome_ore", CRUSHED_ORES.tag),
-		CRUSHED_URANIUM = taggedIngredient("crushed_uranium_ore", CRUSHED_ORES.tag);
+		CRUSHED_CHROME = taggedIngredient("crushed_chrome_ore", CRUSHED_ORES.tag);
+		// CRUSHED_URANIUM = taggedIngredient("crushed_uranium_ore", CRUSHED_ORES.tag); This is already added by create compat.
 
 	static {
 		REGISTRATE.startSection(CURIOSITIES);

@@ -56,6 +56,18 @@ public class ExcelsiorStandardRecipeGen extends ExcelsiorRecipeProvider {
 			.pattern("CCC")
 			.pattern("CCC"));
 
+	private Marker COOKING = enterFolder("/");
+
+	GeneratedRecipe
+	FISH_CAKE = create(ExcelsiorItems.FISH_CAKE::get).viaCooking(ExcelsiorItems.FISH_CAKE_RAW::get).inSmoker()
+
+
+		;
+
+	/*
+	 * End of recipe list
+	 */
+
 	String currentFolder = "";
 
 	Marker enterSection(AllSections section) {
@@ -90,79 +102,79 @@ public class ExcelsiorStandardRecipeGen extends ExcelsiorRecipeProvider {
 		});
 	}
 
-	GeneratedRecipe blastCrushedMetal(Supplier<? extends ItemLike> result, Supplier<? extends ItemLike> ingredient) {
-		return create(result::get).withSuffix("_from_crushed")
-			.viaCooking(ingredient::get)
-			.rewardXP(.1f)
-			.inBlastFurnace();
-	}
-
-	GeneratedRecipe blastModdedCrushedMetal(
-		ItemEntry<? extends Item> ingredient, CompatMetals metal) {
-		String metalName = metal.getName();
-		for (Mods mod : metal.getMods()) {
-			ResourceLocation ingot = mod.ingotOf(metalName);
-			String modId = mod.getId();
-			create(ingot).withSuffix("_compat_" + modId)
-				.whenModLoaded(modId)
-				.viaCooking(ingredient::get)
-				.rewardXP(.1f)
-				.inBlastFurnace();
-		}
-		return null;
-	}
-
-	GeneratedRecipe recycleGlass(BlockEntry<? extends Block> ingredient) {
-		return create(() -> Blocks.GLASS).withSuffix("_from_" + ingredient.getId()
-				.getPath())
-			.viaCooking(ingredient::get)
-			.forDuration(50)
-			.inFurnace();
-	}
-
-	GeneratedRecipe recycleGlassPane(BlockEntry<? extends Block> ingredient) {
-		return create(() -> Blocks.GLASS_PANE).withSuffix("_from_" + ingredient.getId()
-				.getPath())
-			.viaCooking(ingredient::get)
-			.forDuration(50)
-			.inFurnace();
-	}
-
-	GeneratedRecipe metalCompacting(List<ItemProviderEntry<? extends ItemLike>> variants,
-		List<Supplier<TagKey<Item>>> ingredients) {
-		GeneratedRecipe result = null;
-		for (int i = 0; i + 1 < variants.size(); i++) {
-			ItemProviderEntry<? extends ItemLike> currentEntry = variants.get(i);
-			ItemProviderEntry<? extends ItemLike> nextEntry = variants.get(i + 1);
-			Supplier<TagKey<Item>> currentIngredient = ingredients.get(i);
-			Supplier<TagKey<Item>> nextIngredient = ingredients.get(i + 1);
-
-			result = create(nextEntry).withSuffix("_from_compacting")
-				.unlockedBy(currentEntry::get)
-				.viaShaped(b -> b.pattern("###")
-					.pattern("###")
-					.pattern("###")
-					.define('#', currentIngredient.get()));
-
-			result = create(currentEntry).returns(9)
-				.withSuffix("_from_decompacting")
-				.unlockedBy(nextEntry::get)
-				.viaShapeless(b -> b.requires(nextIngredient.get()));
-		}
-		return result;
-	}
-
-	GeneratedRecipe conversionCycle(List<ItemProviderEntry<? extends ItemLike>> cycle) {
-		GeneratedRecipe result = null;
-		for (int i = 0; i < cycle.size(); i++) {
-			ItemProviderEntry<? extends ItemLike> currentEntry = cycle.get(i);
-			ItemProviderEntry<? extends ItemLike> nextEntry = cycle.get((i + 1) % cycle.size());
-			result = create(nextEntry).withSuffix("from_conversion")
-				.unlockedBy(currentEntry::get)
-				.viaShapeless(b -> b.requires(currentEntry.get()));
-		}
-		return result;
-	}
+	// GeneratedRecipe blastCrushedMetal(Supplier<? extends ItemLike> result, Supplier<? extends ItemLike> ingredient) {
+	// 	return create(result::get).withSuffix("_from_crushed")
+	// 		.viaCooking(ingredient::get)
+	// 		.rewardXP(.1f)
+	// 		.inBlastFurnace();
+	// }
+	//
+	// GeneratedRecipe blastModdedCrushedMetal(
+	// 	ItemEntry<? extends Item> ingredient, CompatMetals metal) {
+	// 	String metalName = metal.getName();
+	// 	for (Mods mod : metal.getMods()) {
+	// 		ResourceLocation ingot = mod.ingotOf(metalName);
+	// 		String modId = mod.getId();
+	// 		create(ingot).withSuffix("_compat_" + modId)
+	// 			.whenModLoaded(modId)
+	// 			.viaCooking(ingredient::get)
+	// 			.rewardXP(.1f)
+	// 			.inBlastFurnace();
+	// 	}
+	// 	return null;
+	// }
+	//
+	// GeneratedRecipe recycleGlass(BlockEntry<? extends Block> ingredient) {
+	// 	return create(() -> Blocks.GLASS).withSuffix("_from_" + ingredient.getId()
+	// 			.getPath())
+	// 		.viaCooking(ingredient::get)
+	// 		.forDuration(50)
+	// 		.inFurnace();
+	// }
+	//
+	// GeneratedRecipe recycleGlassPane(BlockEntry<? extends Block> ingredient) {
+	// 	return create(() -> Blocks.GLASS_PANE).withSuffix("_from_" + ingredient.getId()
+	// 			.getPath())
+	// 		.viaCooking(ingredient::get)
+	// 		.forDuration(50)
+	// 		.inFurnace();
+	// }
+	//
+	// GeneratedRecipe metalCompacting(List<ItemProviderEntry<? extends ItemLike>> variants,
+	// 	List<Supplier<TagKey<Item>>> ingredients) {
+	// 	GeneratedRecipe result = null;
+	// 	for (int i = 0; i + 1 < variants.size(); i++) {
+	// 		ItemProviderEntry<? extends ItemLike> currentEntry = variants.get(i);
+	// 		ItemProviderEntry<? extends ItemLike> nextEntry = variants.get(i + 1);
+	// 		Supplier<TagKey<Item>> currentIngredient = ingredients.get(i);
+	// 		Supplier<TagKey<Item>> nextIngredient = ingredients.get(i + 1);
+	//
+	// 		result = create(nextEntry).withSuffix("_from_compacting")
+	// 			.unlockedBy(currentEntry::get)
+	// 			.viaShaped(b -> b.pattern("###")
+	// 				.pattern("###")
+	// 				.pattern("###")
+	// 				.define('#', currentIngredient.get()));
+	//
+	// 		result = create(currentEntry).returns(9)
+	// 			.withSuffix("_from_decompacting")
+	// 			.unlockedBy(nextEntry::get)
+	// 			.viaShapeless(b -> b.requires(nextIngredient.get()));
+	// 	}
+	// 	return result;
+	// }
+	//
+	// GeneratedRecipe conversionCycle(List<ItemProviderEntry<? extends ItemLike>> cycle) {
+	// 	GeneratedRecipe result = null;
+	// 	for (int i = 0; i < cycle.size(); i++) {
+	// 		ItemProviderEntry<? extends ItemLike> currentEntry = cycle.get(i);
+	// 		ItemProviderEntry<? extends ItemLike> nextEntry = cycle.get((i + 1) % cycle.size());
+	// 		result = create(nextEntry).withSuffix("from_conversion")
+	// 			.unlockedBy(currentEntry::get)
+	// 			.viaShapeless(b -> b.requires(currentEntry.get()));
+	// 	}
+	// 	return result;
+	// }
 
 	class GeneratedRecipeBuilder {
 

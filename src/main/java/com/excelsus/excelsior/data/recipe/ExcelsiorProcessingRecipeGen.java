@@ -30,6 +30,8 @@ public abstract class ExcelsiorProcessingRecipeGen extends ExcelsiorRecipeProvid
 	public static void registerAll(DataGenerator gen) {
 		GENERATORS.add(new ExcelsiorCentrifugingRecipeGen(gen));
 		GENERATORS.add(new ExcelsiorMillingRecipeGen(gen));
+		GENERATORS.add(new ExcelsiorMixingRecipeGen(gen));
+		GENERATORS.add(new ExcelsiorPressingRecipeGen(gen));
 
 		gen.addProvider(true, new DataProvider() {
 
