@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 0.0,
+  "ingredient": {
+    "item": "excelsior:fish_cake_raw"
+  },
+  "result": "excelsior:fish_cake"
+}

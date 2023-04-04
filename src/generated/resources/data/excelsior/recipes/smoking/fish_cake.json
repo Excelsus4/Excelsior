@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "cookingtime": 100,
+  "experience": 0.0,
+  "ingredient": {
+    "item": "excelsior:fish_cake_raw"
+  },
+  "result": "excelsior:fish_cake"
+}

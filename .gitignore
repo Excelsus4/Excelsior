@@ -28,4 +28,4 @@ build/
 .idea/
 run/
 
-src/generated/
+# src/generated/

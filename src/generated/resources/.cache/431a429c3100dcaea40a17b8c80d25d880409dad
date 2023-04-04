@@ -1,0 +1,11 @@
+// 1.19.2	2023-04-04T22:47:31.491793	Excelsior's Standard Recipes
+ab2e98c367412c06b7396a165c8e15d547f234fc data/excelsior/advancements/recipes/excelsior/campfire_cooking/fish_cake.json
+23982f0e8e9f5372552a0ef9fbfe2154d7e1111b data/excelsior/advancements/recipes/excelsior/crafting/materials/raw_chrome.json
+48ab10d4086754143044b6e64994c4f4b30d564d data/excelsior/advancements/recipes/excelsior/crafting/materials/raw_chrome_block.json
+37f68a35d9d34f8fc48925f0cabc1798b74b4468 data/excelsior/advancements/recipes/excelsior/smelting/fish_cake.json
+c4edeedaf8d6922ee7af384427e25de2a8150f58 data/excelsior/advancements/recipes/excelsior/smoking/fish_cake.json
+c8ef38da4fec7add9f48977073432abbbd033715 data/excelsior/recipes/campfire_cooking/fish_cake.json
+40363615dc11fa5210677ccb9a06b489db2dfc2c data/excelsior/recipes/crafting/materials/raw_chrome.json
+0cf07bfba6c1029c58ff59d3d1eee3a74678f317 data/excelsior/recipes/crafting/materials/raw_chrome_block.json
+90868263c1387d65a3399f9578579f0f3496fa51 data/excelsior/recipes/smelting/fish_cake.json
+efa422708725236d101e3e2a86fabf8a593c3816 data/excelsior/recipes/smoking/fish_cake.json

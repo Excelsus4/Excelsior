@@ -1,0 +1,14 @@
+{
+  "type": "create:centrifuging",
+  "ingredients": [
+    {
+      "item": "create:crushed_uranium_ore"
+    }
+  ],
+  "processingTime": 200,
+  "results": [
+    {
+      "item": "excelsior:low_enriched_uranium"
+    }
+  ]
+}

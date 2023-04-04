@@ -1,0 +1,13 @@
+{
+  "type": "create:pressing",
+  "ingredients": [
+    {
+      "item": "excelsior:fish_dough"
+    }
+  ],
+  "results": [
+    {
+      "item": "excelsior:fish_cake_raw"
+    }
+  ]
+}

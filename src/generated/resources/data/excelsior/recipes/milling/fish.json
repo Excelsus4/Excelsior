@@ -1,0 +1,14 @@
+{
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "tag": "minecraft:fishes"
+    }
+  ],
+  "processingTime": 25,
+  "results": [
+    {
+      "item": "excelsior:fish_powder"
+    }
+  ]
+}

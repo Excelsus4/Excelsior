@@ -1,0 +1,9 @@
+{
+  "values": [
+    "excelsior:chrome_ingot",
+    "excelsior:stainless_steel_ingot",
+    "excelsior:depleted_uranium",
+    "excelsior:low_enriched_uranium",
+    "excelsior:high_enriched_uranium"
+  ]
+}
