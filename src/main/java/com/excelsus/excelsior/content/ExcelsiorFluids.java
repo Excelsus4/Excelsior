@@ -22,7 +22,6 @@ import net.minecraftforge.fluids.ForgeFlowingFluid;
 
 import com.excelsus.excelsior.Excelsior;
 import com.simibubi.create.AllTags;
-import com.simibubi.create.content.palettes.AllPaletteStoneTypes;
 import com.tterrag.registrate.util.entry.FluidEntry;
 
 public class ExcelsiorFluids {
@@ -56,8 +55,7 @@ public class ExcelsiorFluids {
 					if (fluidState.isSource()) {
 						return Blocks.OBSIDIAN.defaultBlockState();
 					} else {
-						return AllPaletteStoneTypes.LIMESTONE.getBaseBlock()
-							.get()
+						return Blocks.NETHERRACK
 							.defaultBlockState();
 					}
 				}
@@ -68,8 +66,7 @@ public class ExcelsiorFluids {
 	public static BlockState getLavaInteraction(FluidState fluidState) {
 		Fluid fluid = fluidState.getType();
 		if (fluid.isSame(CASTOR_OIL.get()))
-			return AllPaletteStoneTypes.LIMESTONE.getBaseBlock()
-				.get()
+			return Blocks.NETHERRACK
 				.defaultBlockState();
 		return null;
 	}
