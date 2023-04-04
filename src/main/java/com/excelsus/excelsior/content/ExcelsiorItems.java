@@ -76,6 +76,10 @@ public class ExcelsiorItems {
 			.model(AssetLookup.itemModelWithPartials())
 			.register();
 
+	static {
+		REGISTRATE.startSection(ExcelsiorSections.getCastor());
+	}
+
 	public static final ItemEntry<CastorSeedItem> CASTOR_SEEDS =
 		REGISTRATE.item("castor_seeds", CastorSeedItem::new)
 			.properties(p -> p.stacksTo(64))

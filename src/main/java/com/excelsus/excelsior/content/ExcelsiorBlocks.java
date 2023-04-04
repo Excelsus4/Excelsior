@@ -66,6 +66,10 @@ public class ExcelsiorBlocks {
 		.transform(customItemModel())
 		.register();
 
+	static {
+		REGISTRATE.startSection(ExcelsiorSections.getCastor());
+	}
+
 	public static final BlockEntry<CastorPlantBlock> CASTOR_PLANT = REGISTRATE.block("castor_plant", CastorPlantBlock::new)
 		.initialProperties(() -> Blocks.WHEAT)
 		.register();
