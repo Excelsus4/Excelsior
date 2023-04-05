@@ -1,4 +1,4 @@
-// 1.19.2	2023-04-06T00:03:41.461048	Registrate Provider for excelsior [Recipes, Advancements, Loot tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.19.2	2023-04-06T00:32:19.785418	Registrate Provider for excelsior [Recipes, Advancements, Loot tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 e4147cb2f99f3a8c1e5ce25355f011caa7e39ca6 assets/excelsior/blockstates/castor_plant.json
 3b60e59008e6119bd150ec0f667326533c5f4a03 assets/excelsior/blockstates/centrifuge.json
 f8af02327ee33354abc34447152ab33a6382e887 assets/excelsior/blockstates/chrome_block.json
@@ -13,8 +13,8 @@ cbd74888fba3e246b0395c139a59ce88a34bcfd3 assets/excelsior/blockstates/raw_uraniu
 cf891fb2eb73825ef958e351cf1fba7643d100d6 assets/excelsior/blockstates/stainless_block.json
 5e69a3cc30d347dc5792ad36149d224e75ac69a1 assets/excelsior/blockstates/stainless_casing.json
 62c6ecaa601ec519eec5d3f40dbff84dddc2a453 assets/excelsior/blockstates/uranium_ore.json
-aad7f39988e7877913d0334ea450a8f1717680d2 assets/excelsior/lang/en_ud.json
-831d9dd40cc57dcbce6e0f2b8e7e7e0e04101a39 assets/excelsior/lang/en_us.json
+2cab19a41aaa0aebe3d04060ec0c07ae2caf4dfd assets/excelsior/lang/en_ud.json
+a420d4556f55a224fe35b4c3294e87e70c2c3b73 assets/excelsior/lang/en_us.json
 52e8d4ec5da1c5745dab7d4eb4b908ce5283d65a assets/excelsior/models/block/chrome_block.json
 7f1465c7362bb9c236251e697a80a4ffdf0ebbe2 assets/excelsior/models/block/chrome_ore.json
 b961d27e117f1ecbac4250c32321ea085a3a724c assets/excelsior/models/block/crude_castor_oil.json
@@ -38,6 +38,7 @@ cd5c456595a0d28581fbe6dd9360b778b7c12859 assets/excelsior/models/item/crude_cast
 1bb5a77871f0d0b1909db4fa7ed0ece3ad94ce5f assets/excelsior/models/item/crushed_chrome_ore.json
 7cbaac31d55aa848b640b07f0397c8af24318f7a assets/excelsior/models/item/debug_ingot.json
 04e522fb8ac433c468804bc3a5578942e716c7dd assets/excelsior/models/item/depleted_uranium.json
+d43938cf95c1cbfc4aa4ad85d5a13a3a2741d0e4 assets/excelsior/models/item/depleted_uranium_nugget.json
 47d5df9df4bac7fd12467d7bb256acd713d0da53 assets/excelsior/models/item/dry_castor_seeds.json
 4d05d92aea697bc1c3ac9fdae00c0674624ec6a7 assets/excelsior/models/item/du_block.json
 6a4aced15151c082d9db5f25d3b3372180924143 assets/excelsior/models/item/fish_cake.json
@@ -47,8 +48,10 @@ daf4fab3a3b47df9bb2f08b6da5c98d3a1cebd98 assets/excelsior/models/item/fish_cake_
 be32512954471037a301ad00c8481ff85b51ab12 assets/excelsior/models/item/fish_powder.json
 129bb23b82579d48c368b9cf2b0d6e187c25f79c assets/excelsior/models/item/heu_block.json
 1980a70c22bba44d4ab202287bbba63b24167cf5 assets/excelsior/models/item/high_enriched_uranium.json
+e139af233f6d24d236e1a729b65ece5516c722a0 assets/excelsior/models/item/high_enriched_uranium_nugget.json
 9007c445cd377b32ccc61a4f5ac89d8e3edc8251 assets/excelsior/models/item/leu_block.json
 2d6a2deb53df4819051b3c2661de99af31f542bf assets/excelsior/models/item/low_enriched_uranium.json
+c3503ed2bbb0c829eefa54458ec9ca225f05d8a5 assets/excelsior/models/item/low_enriched_uranium_nugget.json
 d9fd95a683fbb4cc237e8f19656d5cc7917aa314 assets/excelsior/models/item/oil_cake_fertilizer.json
 2f97adbf5dc8e0e6845a560f4cb2a33b73243c55 assets/excelsior/models/item/raw_chrome.json
 66bb0a9336c5fb5a89d084208c368d5b00c764ce assets/excelsior/models/item/raw_chrome_block.json
@@ -100,6 +103,10 @@ fa0c6ae36e8da8a22787eda64fa093066b270cef data/forge/tags/items/ingots/depleted_u
 133bf5659856abc8f2202f5f28aeb60b36cb9f34 data/forge/tags/items/ingots/reactor_uranium.json
 232f0d208119f66c9735eacf53d3e068e00d998d data/forge/tags/items/ingots/stainless_steel.json
 884052a9c67be4a92c2e1256308cad8638cddb98 data/forge/tags/items/ingots/weapon_uranium.json
+298657a8491dec028f49c6bd3624ebfa2a7f93da data/forge/tags/items/nuggets.json
+b7d05127178d781512d7824189d351e6a8168037 data/forge/tags/items/nuggets/depleted_uranium.json
+92ca9e2c021be4607404a6d8c2cfbc7f2168b07a data/forge/tags/items/nuggets/reactor_uranium.json
+84e81c11ca0c6fd8e1af787b4ae7be67fcc44d2b data/forge/tags/items/nuggets/weapon_uranium.json
 07be340de02aad60eefff5bfd724f648dca1c619 data/forge/tags/items/ores.json
 ed5e6f418caf55a381b6e7a5bb7a4c9df82a8852 data/forge/tags/items/ores/chrome.json
 49211d82218db2a0e1fc4c4186929c23163a77be data/forge/tags/items/ores/uranium.json

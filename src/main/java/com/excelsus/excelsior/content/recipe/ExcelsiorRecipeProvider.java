@@ -145,12 +145,6 @@ public abstract class ExcelsiorRecipeProvider extends RecipeProvider implements 
 		static ItemLike copperCasing() {
 			return AllBlocks.COPPER_CASING.get();
 		}
-		static ItemLike refinedRadiance() {
-			return AllItems.REFINED_RADIANCE.get();
-		}
-		static ItemLike shadowSteel() {
-			return AllItems.SHADOW_STEEL.get();
-		}
 		static TagKey<Item> stainlessSheet() {
 			return AllTags.forgeItemTag("plates/stainless_steel");
 		}
@@ -160,6 +154,26 @@ public abstract class ExcelsiorRecipeProvider extends RecipeProvider implements 
 		static ItemLike stainlessIngot() {
 			return ExcelsiorItems.STAINLESS_STEEL_INGOT.get();
 		}
-
+		static ItemLike castorSeeds() {
+			return ExcelsiorItems.CASTOR_SEEDS.get();
+		}
+		static ItemLike dryCastorSeeds() {
+			return ExcelsiorItems.DRY_CASTOR_SEEDS.get();
+		}
+		static ItemLike crushedCastorSeeds() {
+			return ExcelsiorItems.CRUSHED_CASTOR_SEEDS.get();
+		}
+		static ItemLike castorOilCake() {
+			return ExcelsiorItems.CASTOR_OIL_CAKE.get();
+		}
+		static ItemLike oilCakeFertilizer() {
+			return ExcelsiorItems.OIL_CAKE_FERTILIZER.get();
+		}
+		static ItemLike crushedUranium() {
+			return AllItems.CRUSHED_URANIUM.get();
+		}
+		static TagKey<Item> leuIngot() {
+			return AllTags.forgeItemTag("ingots/reactor_uranium");
+		}
 	}
 }

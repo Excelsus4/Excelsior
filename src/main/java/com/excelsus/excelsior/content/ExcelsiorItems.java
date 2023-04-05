@@ -9,6 +9,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BoneMealItem;
 import net.minecraft.world.item.Item;
+import net.minecraftforge.common.Tags;
 
 import com.excelsus.excelsior.Excelsior;
 import com.excelsus.excelsior.content.item.CastorSeedItem;
@@ -54,15 +55,24 @@ public class ExcelsiorItems {
 			forgeItemTag("raw_materials"));
 
 	public static final ItemEntry<Item>
-		CHROME_INGOT = taggedIngredient("chrome_ingot", forgeItemTag("ingots/chrome"), CREATE_INGOTS.tag),
-		STAINLESS_STEEL_INGOT = taggedIngredient("stainless_steel_ingot", forgeItemTag("ingots/stainless_steel"),
-			CREATE_INGOTS.tag),
-		DEPLETED_URANIUM_INGOT = taggedIngredient("depleted_uranium", forgeItemTag("ingots/depleted_uranium"),
-			CREATE_INGOTS.tag),
-		LOW_ENRICHED_URANIUM_INGOT = taggedIngredient("low_enriched_uranium", forgeItemTag("ingots/reactor_uranium"),
-			CREATE_INGOTS.tag),
-		HIGH_ENRICHED_URANIUM_INGOT = taggedIngredient("high_enriched_uranium", forgeItemTag("ingots/weapon_uranium"),
-			CREATE_INGOTS.tag);
+		CHROME_INGOT = taggedIngredient("chrome_ingot",
+		forgeItemTag("ingots/chrome"), CREATE_INGOTS.tag),
+		STAINLESS_STEEL_INGOT = taggedIngredient("stainless_steel_ingot",
+			forgeItemTag("ingots/stainless_steel"), CREATE_INGOTS.tag),
+		DEPLETED_URANIUM_INGOT = taggedIngredient("depleted_uranium",
+			forgeItemTag("ingots/depleted_uranium"), CREATE_INGOTS.tag),
+		LOW_ENRICHED_URANIUM_INGOT = taggedIngredient("low_enriched_uranium",
+			forgeItemTag("ingots/reactor_uranium"), CREATE_INGOTS.tag),
+		HIGH_ENRICHED_URANIUM_INGOT = taggedIngredient("high_enriched_uranium",
+			forgeItemTag("ingots/weapon_uranium"), CREATE_INGOTS.tag);
+
+	public static final ItemEntry<Item>
+		DEPLETED_URANIUM_NUGGET = taggedIngredient("depleted_uranium_nugget",
+			forgeItemTag("nuggets/depleted_uranium"), Tags.Items.NUGGETS),
+		LOW_ENRICHED_URANIUM_NUGGET = taggedIngredient("low_enriched_uranium_nugget",
+			forgeItemTag("nuggets/reactor_uranium"), Tags.Items.NUGGETS),
+		HIGH_ENRICHED_URANIUM_NUGGET = taggedIngredient("high_enriched_uranium_nugget",
+			forgeItemTag("nuggets/weapon_uranium"), Tags.Items.NUGGETS);
 
 	public static final ItemEntry<Item>
 		STAINLESS_SHEET = taggedIngredient("stainless_sheet", forgeItemTag("plates/stainless_steel"), PLATES.tag),

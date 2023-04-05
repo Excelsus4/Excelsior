@@ -8,11 +8,11 @@
   "processingTime": 10000,
   "results": [
     {
-      "item": "excelsior:low_enriched_uranium"
+      "item": "excelsior:low_enriched_uranium_nugget"
     },
     {
       "count": 8,
-      "item": "excelsior:depleted_uranium"
+      "item": "excelsior:depleted_uranium_nugget"
     }
   ]
 }

@@ -18,13 +18,13 @@ public class ExcelsiorMechanicalCraftingRecipeGen extends ExcelsiorRecipeProvide
 	GeneratedRecipe
 
 	CENTRIFUGE = create(ExcelsiorBlocks.CENTRIFUGE::get)
-		.recipe(b -> b.key('C', AllBlocks.COGWHEEL.get())
-			.key('L', AllBlocks.LARGE_COGWHEEL.get())
-			.key('M', AllItems.PRECISION_MECHANISM.get())
+		.recipe(b -> b.key('C', I.cog())
+			.key('L', I.largeCog())
+			.key('M', I.precisionMechanism())
 			.key('P', AllItems.PROPELLER.get())
 			.key('Q', AllItems.POLISHED_ROSE_QUARTZ.get())
 			.key('S', AllBlocks.SMART_CHUTE.get())
-			.key('T', ExcelsiorBlocks.STAINLESS_CASING.get())
+			.key('T', I.stainlessCasing())
 			.patternLine(" LCL ")
 			.patternLine(" MPM ")
 			.patternLine(" QSQ ")

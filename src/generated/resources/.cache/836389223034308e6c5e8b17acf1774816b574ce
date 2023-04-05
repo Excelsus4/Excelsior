@@ -1,6 +1,6 @@
-// 1.19.2	2023-04-06T00:09:45.856058	Excelsior's Processing Recipes
-02d84ac7b176544c50894f9655da30d55735eea5 data/excelsior/recipes/centrifuging/crushed_uranium_ore.json
-da1a6933f06f01c83c9d7a048eca45861bde12ed data/excelsior/recipes/centrifuging/low_enriched_uranium.json
+// 1.19.2	2023-04-06T00:46:10.748992	Excelsior's Processing Recipes
+d90474084019e7b7b52a2ff152c0bc7e915763b5 data/excelsior/recipes/centrifuging/crushed_uranium.json
+bdf6db16a3214a93fb0bb5fd33f93f06f752136a data/excelsior/recipes/centrifuging/leu_ingot.json
 8bfed358677c8d85aa361a96f9719ca67b10a949 data/excelsior/recipes/compacting/oil_cake_fertilizer.json
 08e03f023631fb51e75c19cca77de09f13e26632 data/excelsior/recipes/crushing/dry_castor_seeds.json
 ca163e63616b670cbe225077a161f4efbbada0d8 data/excelsior/recipes/item_application/stainless_casing.json

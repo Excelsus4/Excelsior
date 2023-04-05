@@ -8,8 +8,8 @@ import com.simibubi.create.foundation.utility.recipe.IRecipeTypeInfo;
 
 public class ExcelsiorCrushingRecipeGen extends ExcelsiorProcessingRecipeGen {
 	GeneratedRecipe
-	DRY_CASTOR_SEEDS = create(ExcelsiorItems.DRY_CASTOR_SEEDS::get, b -> b.duration(100)
-		.output(ExcelsiorItems.CRUSHED_CASTOR_SEEDS.get()));
+	DRY_CASTOR_SEEDS = create("dry_castor_seeds", b -> b.require(I.dryCastorSeeds()).duration(100)
+		.output(I.crushedCastorSeeds()));
 
 	public ExcelsiorCrushingRecipeGen(DataGenerator generator) {
 		super(generator);

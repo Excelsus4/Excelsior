@@ -2,7 +2,6 @@ package com.excelsus.excelsior.content.recipe;
 
 import net.minecraft.data.DataGenerator;
 
-import com.simibubi.create.AllItems;
 import com.simibubi.create.AllRecipeTypes;
 import com.simibubi.create.foundation.utility.recipe.IRecipeTypeInfo;
 
