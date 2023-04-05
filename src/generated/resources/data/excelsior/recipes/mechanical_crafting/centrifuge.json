@@ -1,0 +1,37 @@
+{
+  "type": "create:mechanical_crafting",
+  "acceptMirrored": false,
+  "key": {
+    "C": {
+      "item": "create:cogwheel"
+    },
+    "L": {
+      "item": "create:large_cogwheel"
+    },
+    "M": {
+      "item": "create:precision_mechanism"
+    },
+    "P": {
+      "item": "create:propeller"
+    },
+    "Q": {
+      "item": "create:polished_rose_quartz"
+    },
+    "S": {
+      "item": "create:smart_chute"
+    },
+    "T": {
+      "item": "excelsior:stainless_casing"
+    }
+  },
+  "pattern": [
+    " LCL ",
+    " MPM ",
+    " QSQ ",
+    " QMQ ",
+    "TTTTT"
+  ],
+  "result": {
+    "item": "excelsior:centrifuge"
+  }
+}

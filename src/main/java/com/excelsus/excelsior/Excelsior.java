@@ -18,6 +18,7 @@ import com.excelsus.excelsior.content.ExcelsiorFluids;
 import com.excelsus.excelsior.content.ExcelsiorItemGroup;
 import com.excelsus.excelsior.content.ExcelsiorItems;
 import com.excelsus.excelsior.content.ExcelsiorTileEntities;
+import com.excelsus.excelsior.content.recipe.ExcelsiorMechanicalCraftingRecipeGen;
 import com.excelsus.excelsior.content.worldgen.ExcelsiorBuiltinRegistration;
 import com.excelsus.excelsior.content.worldgen.ExcelsiorOreFeatureConfigEntries;
 import com.excelsus.excelsior.content.recipe.ExcelsiorProcessingRecipeGen;
@@ -64,6 +65,7 @@ public class Excelsior {
 		DataGenerator gen = event.getGenerator();
 		if (event.includeServer()) {
 			gen.addProvider(true, new ExcelsiorStandardRecipeGen(gen));
+			gen.addProvider(true, new ExcelsiorMechanicalCraftingRecipeGen(gen));
 			ExcelsiorProcessingRecipeGen.registerAll(gen);
 		}
 	}

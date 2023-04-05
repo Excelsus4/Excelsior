@@ -11,6 +11,7 @@
   "block.excelsior.raw_uranium_block": "ɯnıuɐɹ∩ ʍɐᴚ ɟo ʞɔoןᗺ",
   "block.excelsior.refined_castor_oil": "ןıO ɹoʇsɐƆ pǝuıɟǝᴚ",
   "block.excelsior.stainless_block": "ןǝǝʇS ssǝןuıɐʇS ɟo ʞɔoןᗺ",
+  "block.excelsior.stainless_casing": "buısɐƆ ןǝǝʇS ssǝןuıɐʇS",
   "block.excelsior.uranium_ore": "ǝɹO ɯnıuɐɹ∩",
   "fluid.excelsior.crude_castor_oil": "ןıO ɹoʇsɐƆ ǝpnɹƆ",
   "fluid.excelsior.refined_castor_oil": "ןıO ɹoʇsɐƆ ǝpnɹƆ",
@@ -34,6 +35,7 @@
   "item.excelsior.raw_chrome": "ǝɯoɹɥƆ ʍɐᴚ",
   "item.excelsior.raw_uranium": "ɯnıuɐɹ∩ ʍɐᴚ",
   "item.excelsior.refined_castor_oil_bucket": "ʇǝʞɔnᗺ ןıO ɹoʇsɐƆ pǝuıɟǝᴚ",
+  "item.excelsior.stainless_sheet": "ʇǝǝɥS ssǝןuıɐʇS",
   "item.excelsior.stainless_steel_ingot": "ʇobuI ןǝǝʇS ssǝןuıɐʇS",
   "item.excelsior.yellow_cake": "ǝʞɐƆ ʍoןןǝʎ"
 }

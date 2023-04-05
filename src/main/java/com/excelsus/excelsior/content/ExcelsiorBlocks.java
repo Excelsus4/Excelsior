@@ -23,8 +23,10 @@ import com.excelsus.excelsior.Excelsior;
 import com.excelsus.excelsior.content.blocks.castor.CastorPlantBlock;
 import com.excelsus.excelsior.content.blocks.centrifuge.CentrifugeBlock;
 import com.simibubi.create.content.AllSections;
+import com.simibubi.create.content.contraptions.base.CasingBlock;
 import com.simibubi.create.foundation.block.BlockStressDefaults;
 import com.simibubi.create.foundation.data.AssetLookup;
+import com.simibubi.create.foundation.data.BuilderTransformers;
 import com.simibubi.create.foundation.data.SharedProperties;
 import com.tterrag.registrate.providers.loot.RegistrateBlockLootTables;
 import com.tterrag.registrate.util.entry.BlockEntry;
@@ -180,6 +182,13 @@ public class ExcelsiorBlocks {
 		.item()
 		.transform(customItemModel())
 		.register();
+
+	public static final BlockEntry<CasingBlock> STAINLESS_CASING =
+		REGISTRATE.block("stainless_casing", CasingBlock::new)
+			.properties(p -> p.color(MaterialColor.SNOW))
+			.transform(BuilderTransformers.casing(() -> ExcelsiorSpriteShifts.STAINLESS_CASING))
+			.lang("Stainless Steel Casing")
+			.register();
 
 	static {
 		REGISTRATE.startSection(ExcelsiorSections.CASTOR);

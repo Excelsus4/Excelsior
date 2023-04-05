@@ -9,6 +9,7 @@
     "excelsior:leu_block",
     "excelsior:heu_block",
     "excelsior:stainless_block",
-    "excelsior:centrifuge"
+    "excelsior:centrifuge",
+    "excelsior:stainless_casing"
   ]
 }

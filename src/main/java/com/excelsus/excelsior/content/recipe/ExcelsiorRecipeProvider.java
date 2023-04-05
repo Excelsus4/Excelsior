@@ -16,6 +16,8 @@ import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 
 import com.excelsus.excelsior.Excelsior;
+import com.excelsus.excelsior.content.ExcelsiorBlocks;
+import com.excelsus.excelsior.content.ExcelsiorItems;
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.AllItems;
 import com.simibubi.create.AllTags;
@@ -47,141 +49,116 @@ public abstract class ExcelsiorRecipeProvider extends RecipeProvider implements 
 	}
 
 	protected static class I {
-
 		static TagKey<Item> redstone() {
 			return Tags.Items.DUSTS_REDSTONE;
 		}
-
 		static TagKey<Item> planks() {
 			return ItemTags.PLANKS;
 		}
-
 		static TagKey<Item> woodSlab() {
 			return ItemTags.WOODEN_SLABS;
 		}
-
 		static TagKey<Item> gold() {
 			return AllTags.forgeItemTag("ingots/gold");
 		}
-
 		static TagKey<Item> goldSheet() {
 			return AllTags.forgeItemTag("plates/gold");
 		}
-
 		static TagKey<Item> stone() {
 			return Tags.Items.STONE;
 		}
-
 		static ItemLike andesite() {
 			return AllItems.ANDESITE_ALLOY.get();
 		}
-
 		static ItemLike shaft() {
 			return AllBlocks.SHAFT.get();
 		}
-
 		static ItemLike cog() {
 			return AllBlocks.COGWHEEL.get();
 		}
-
 		static ItemLike largeCog() {
 			return AllBlocks.LARGE_COGWHEEL.get();
 		}
-
 		static ItemLike andesiteCasing() {
 			return AllBlocks.ANDESITE_CASING.get();
 		}
-
 		static TagKey<Item> brass() {
 			return AllTags.forgeItemTag("ingots/brass");
 		}
-
 		static TagKey<Item> brassSheet() {
 			return AllTags.forgeItemTag("plates/brass");
 		}
-
 		static TagKey<Item> iron() {
 			return Tags.Items.INGOTS_IRON;
 		}
-
 		static TagKey<Item> ironNugget() {
 			return AllTags.forgeItemTag("nuggets/iron");
 		}
-
 		static TagKey<Item> zinc() {
 			return AllTags.forgeItemTag("ingots/zinc");
 		}
-
 		static TagKey<Item> ironSheet() {
 			return AllTags.forgeItemTag("plates/iron");
 		}
-
 		static TagKey<Item> sturdySheet() {
 			return AllTags.forgeItemTag("plates/obsidian");
 		}
-
 		static ItemLike brassCasing() {
 			return AllBlocks.BRASS_CASING.get();
 		}
-
 		static ItemLike railwayCasing() {
 			return AllBlocks.RAILWAY_CASING.get();
 		}
-
 		static ItemLike electronTube() {
 			return AllItems.ELECTRON_TUBE.get();
 		}
-
 		static ItemLike precisionMechanism() {
 			return AllItems.PRECISION_MECHANISM.get();
 		}
-
 		static ItemLike copperBlock() {
 			return Items.COPPER_BLOCK;
 		}
-
 		static TagKey<Item> brassBlock() {
 			return AllTags.forgeItemTag("storage_blocks/brass");
 		}
-
 		static TagKey<Item> zincBlock() {
 			return AllTags.forgeItemTag("storage_blocks/zinc");
 		}
-
 		static TagKey<Item> wheatFlour() {
 			return AllTags.forgeItemTag("flour/wheat");
 		}
-
 		static ItemLike copper() {
 			return Items.COPPER_INGOT;
 		}
-
 		static TagKey<Item> copperSheet() {
 			return AllTags.forgeItemTag("plates/copper");
 		}
-
 		static TagKey<Item> copperNugget() {
 			return AllTags.forgeItemTag("nuggets/copper");
 		}
-
 		static TagKey<Item> brassNugget() {
 			return AllTags.forgeItemTag("nuggets/brass");
 		}
-
 		static TagKey<Item> zincNugget() {
 			return AllTags.forgeItemTag("nuggets/zinc");
 		}
-
 		static ItemLike copperCasing() {
 			return AllBlocks.COPPER_CASING.get();
 		}
-
 		static ItemLike refinedRadiance() {
 			return AllItems.REFINED_RADIANCE.get();
 		}
-
 		static ItemLike shadowSteel() {
 			return AllItems.SHADOW_STEEL.get();
+		}
+		static TagKey<Item> stainlessSheet() {
+			return AllTags.forgeItemTag("plates/stainless_steel");
+		}
+		static ItemLike stainlessCasing() {
+			return ExcelsiorBlocks.STAINLESS_CASING.get();
+		}
+		static ItemLike stainlessIngot() {
+			return ExcelsiorItems.STAINLESS_STEEL_INGOT.get();
 		}
 
 	}

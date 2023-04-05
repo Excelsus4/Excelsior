@@ -1,0 +1,16 @@
+{
+  "type": "create:item_application",
+  "ingredients": [
+    {
+      "item": "create:brass_casing"
+    },
+    {
+      "tag": "forge:plates/stainless_steel"
+    }
+  ],
+  "results": [
+    {
+      "item": "excelsior:stainless_casing"
+    }
+  ]
+}

@@ -34,6 +34,7 @@ public abstract class ExcelsiorProcessingRecipeGen extends ExcelsiorRecipeProvid
 		GENERATORS.add(new ExcelsiorMixingRecipeGen(gen));
 		GENERATORS.add(new ExcelsiorCompactingRecipeGen(gen));
 		GENERATORS.add(new ExcelsiorPressingRecipeGen(gen));
+		GENERATORS.add(new ExcelsiorItemApplicationRecipeGen(gen));
 
 		gen.addProvider(true, new DataProvider() {
 

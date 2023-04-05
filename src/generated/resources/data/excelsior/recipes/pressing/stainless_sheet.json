@@ -1,0 +1,13 @@
+{
+  "type": "create:pressing",
+  "ingredients": [
+    {
+      "item": "excelsior:stainless_steel_ingot"
+    }
+  ],
+  "results": [
+    {
+      "item": "excelsior:stainless_sheet"
+    }
+  ]
+}

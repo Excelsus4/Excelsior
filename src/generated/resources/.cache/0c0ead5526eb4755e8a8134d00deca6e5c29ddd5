@@ -1,4 +1,4 @@
-// 1.19.2	2023-04-05T23:13:27.719053	Registrate Provider for excelsior [Recipes, Advancements, Loot tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.19.2	2023-04-06T00:03:41.461048	Registrate Provider for excelsior [Recipes, Advancements, Loot tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 e4147cb2f99f3a8c1e5ce25355f011caa7e39ca6 assets/excelsior/blockstates/castor_plant.json
 3b60e59008e6119bd150ec0f667326533c5f4a03 assets/excelsior/blockstates/centrifuge.json
 f8af02327ee33354abc34447152ab33a6382e887 assets/excelsior/blockstates/chrome_block.json
@@ -11,9 +11,10 @@ eca4a31f9990e81a7f2ef9232fe25de7ab0f3961 assets/excelsior/blockstates/leu_block.
 cbd74888fba3e246b0395c139a59ce88a34bcfd3 assets/excelsior/blockstates/raw_uranium_block.json
 82c5b06805804b7d0731e6a256f599de33fb2569 assets/excelsior/blockstates/refined_castor_oil.json
 cf891fb2eb73825ef958e351cf1fba7643d100d6 assets/excelsior/blockstates/stainless_block.json
+5e69a3cc30d347dc5792ad36149d224e75ac69a1 assets/excelsior/blockstates/stainless_casing.json
 62c6ecaa601ec519eec5d3f40dbff84dddc2a453 assets/excelsior/blockstates/uranium_ore.json
-0c025eb48af94b846bdc0d5612c6b3ecf17e4b4d assets/excelsior/lang/en_ud.json
-b9817350dc2e86311afa94e73529b7f63b1c1f5c assets/excelsior/lang/en_us.json
+aad7f39988e7877913d0334ea450a8f1717680d2 assets/excelsior/lang/en_ud.json
+831d9dd40cc57dcbce6e0f2b8e7e7e0e04101a39 assets/excelsior/lang/en_us.json
 52e8d4ec5da1c5745dab7d4eb4b908ce5283d65a assets/excelsior/models/block/chrome_block.json
 7f1465c7362bb9c236251e697a80a4ffdf0ebbe2 assets/excelsior/models/block/chrome_ore.json
 b961d27e117f1ecbac4250c32321ea085a3a724c assets/excelsior/models/block/crude_castor_oil.json
@@ -24,6 +25,7 @@ ed3fcf7a48f7097a16701ea77d36c3576df0977c assets/excelsior/models/block/leu_block
 d59050d4939a1a9585e487a1672910007296cb25 assets/excelsior/models/block/raw_uranium_block.json
 e7f7fa9c6da532e3d5321709e5696b34bd83d50b assets/excelsior/models/block/refined_castor_oil.json
 8ffe1d7173a9b4177fb6d5dc31c9ca7cf2c80cc6 assets/excelsior/models/block/stainless_block.json
+ee9eae6c11e15d841b5da6fe3c6d76c24fc5694f assets/excelsior/models/block/stainless_casing.json
 b7a03cbf6cf53766bf5ccd18daf31067d4bbcd1a assets/excelsior/models/block/uranium_ore.json
 a781dae013cab914e677be4caf2bb35061dab974 assets/excelsior/models/item/castor_oil_cake.json
 94797892979c5ff19b1fe8e80ea2eace7c69d8ce assets/excelsior/models/item/castor_seeds.json
@@ -54,10 +56,14 @@ d9fd95a683fbb4cc237e8f19656d5cc7917aa314 assets/excelsior/models/item/oil_cake_f
 fc3fb8662f2e94939582929ff10da902255e2a90 assets/excelsior/models/item/raw_uranium_block.json
 b33d4ddba5a238a2058db3220e6a2ea618d6cf81 assets/excelsior/models/item/refined_castor_oil_bucket.json
 c5400f617c3948cfab8d57597d8ad35acfde6141 assets/excelsior/models/item/stainless_block.json
+9b581a8234a910f1765df4d1feb44c7f618eb9d5 assets/excelsior/models/item/stainless_casing.json
+2c02599912b2821a379dc2fce5cf3778b96095b0 assets/excelsior/models/item/stainless_sheet.json
 5f26d3a302576b59f911c1d10c311b705988f1f2 assets/excelsior/models/item/stainless_steel_ingot.json
 22dc59f2d96c17e7d708af44d08b7692cecd7dfa assets/excelsior/models/item/uranium_ore.json
 e8766ca1fb167fe6c2167771149f314832652787 assets/excelsior/models/item/yellow_cake.json
+4158f8cc8e6834e7f276411824da6142c6df31e4 data/create/tags/blocks/casing.json
 0f39a256055fa150a76d9103f565b17094a7132b data/create/tags/items/blaze_burner_fuel/special.json
+4158f8cc8e6834e7f276411824da6142c6df31e4 data/create/tags/items/casing.json
 c1f868837ca244e8b87b10a374510ea3efc24480 data/create/tags/items/create_ingots.json
 bff2050db252bbab82054d0d9d8134a068fe7a1c data/create/tags/items/crushed_ores.json
 0f39a256055fa150a76d9103f565b17094a7132b data/create/tags/items/upright_on_belt.json
@@ -71,6 +77,7 @@ ea0354ad46a91c5a1e9daa8525f9c747b4e69414 data/excelsior/loot_tables/blocks/du_bl
 b2001cc329378f3f411811b2453edd81e6ba445f data/excelsior/loot_tables/blocks/raw_chrome_block.json
 153e7765a950d70532337b3c78c329678bf71138 data/excelsior/loot_tables/blocks/raw_uranium_block.json
 732f3adb0b89266b7e97c6df4f1efd8cc7e077b0 data/excelsior/loot_tables/blocks/stainless_block.json
+c9e505638e6e076912de58322568d8c451f1ccec data/excelsior/loot_tables/blocks/stainless_casing.json
 d83c8ed2af3fad2d0e695c540046049dc80611cd data/excelsior/loot_tables/blocks/uranium_ore.json
 07be340de02aad60eefff5bfd724f648dca1c619 data/forge/tags/blocks/ores.json
 ed5e6f418caf55a381b6e7a5bb7a4c9df82a8852 data/forge/tags/blocks/ores/chrome.json
@@ -97,6 +104,8 @@ fa0c6ae36e8da8a22787eda64fa093066b270cef data/forge/tags/items/ingots/depleted_u
 ed5e6f418caf55a381b6e7a5bb7a4c9df82a8852 data/forge/tags/items/ores/chrome.json
 49211d82218db2a0e1fc4c4186929c23163a77be data/forge/tags/items/ores/uranium.json
 07be340de02aad60eefff5bfd724f648dca1c619 data/forge/tags/items/ores_in_ground/stone.json
+982f6e64ff102e0a1fe50e1ccabea228a44f2715 data/forge/tags/items/plates.json
+982f6e64ff102e0a1fe50e1ccabea228a44f2715 data/forge/tags/items/plates/stainless_steel.json
 0cebcc1db89e7011c8d68982e233e01d83762526 data/forge/tags/items/raw_materials.json
 3d05a07d4397747cbe40d39099896c1938a7f011 data/forge/tags/items/raw_materials/chrome.json
 748f0883de6db22e5c780eef4b93134b9e689e2d data/forge/tags/items/raw_materials/uranium.json
@@ -108,5 +117,6 @@ d6d620722a275cb86dd6789afcf43d306c5aa1e9 data/forge/tags/items/storage_blocks/le
 d2d90ea6ff98d4d4eabe9a82cebd22ff5c5c2850 data/forge/tags/items/storage_blocks/raw_chrome.json
 118e01ae8da8580431eaa444b47e4778d70f0a43 data/forge/tags/items/storage_blocks/raw_uranium.json
 2378aeafb2aad407b6aa9974e63be7433e48829b data/forge/tags/items/storage_blocks/stainless.json
-b6bef3895f7ba4c809631997676d5157a1a1105b data/minecraft/tags/blocks/mineable/pickaxe.json
+4158f8cc8e6834e7f276411824da6142c6df31e4 data/minecraft/tags/blocks/mineable/axe.json
+5a13792bfcf464cec6186ecb4677e4bbb1916de8 data/minecraft/tags/blocks/mineable/pickaxe.json
 e71561202d669e8ac0890b8e6951e75ba6a492d8 data/minecraft/tags/blocks/needs_iron_tool.json

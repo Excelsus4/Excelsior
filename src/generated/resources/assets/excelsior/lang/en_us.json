@@ -11,6 +11,7 @@
   "block.excelsior.raw_uranium_block": "Block of Raw Uranium",
   "block.excelsior.refined_castor_oil": "Refined Castor Oil",
   "block.excelsior.stainless_block": "Block of Stainless Steel",
+  "block.excelsior.stainless_casing": "Stainless Steel Casing",
   "block.excelsior.uranium_ore": "Uranium Ore",
   "fluid.excelsior.crude_castor_oil": "Crude Castor Oil",
   "fluid.excelsior.refined_castor_oil": "Crude Castor Oil",
@@ -34,6 +35,7 @@
   "item.excelsior.raw_chrome": "Raw Chrome",
   "item.excelsior.raw_uranium": "Raw Uranium",
   "item.excelsior.refined_castor_oil_bucket": "Refined Castor Oil Bucket",
+  "item.excelsior.stainless_sheet": "Stainless Sheet",
   "item.excelsior.stainless_steel_ingot": "Stainless Steel Ingot",
   "item.excelsior.yellow_cake": "Yellow Cake"
 }
