@@ -18,6 +18,8 @@ import com.excelsus.excelsior.content.ExcelsiorFluids;
 import com.excelsus.excelsior.content.ExcelsiorItemGroup;
 import com.excelsus.excelsior.content.ExcelsiorItems;
 import com.excelsus.excelsior.content.ExcelsiorTileEntities;
+import com.excelsus.excelsior.content.worldgen.ExcelsiorBuiltinRegistration;
+import com.excelsus.excelsior.content.worldgen.ExcelsiorOreFeatureConfigEntries;
 import com.excelsus.excelsior.data.recipe.ExcelsiorProcessingRecipeGen;
 import com.excelsus.excelsior.data.recipe.ExcelsiorStandardRecipeGen;
 import com.mojang.logging.LogUtils;
@@ -44,6 +46,8 @@ public class Excelsior {
 		ExcelsiorItems.register();
 		ExcelsiorTileEntities.register();
 		ExcelsiorFluids.register();
+		ExcelsiorOreFeatureConfigEntries.init();
+		ExcelsiorBuiltinRegistration.register(modEventBus);
 
 		modEventBus.addListener(EventPriority.LOWEST, Excelsior::gatherData);
 

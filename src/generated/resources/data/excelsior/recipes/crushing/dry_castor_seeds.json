@@ -1,0 +1,14 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "excelsior:dry_castor_seeds"
+    }
+  ],
+  "processingTime": 100,
+  "results": [
+    {
+      "item": "excelsior:crushed_castor_seeds"
+    }
+  ]
+}
