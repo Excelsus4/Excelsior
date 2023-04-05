@@ -1,5 +1,11 @@
 {
   "values": [
-    "excelsior:raw_chrome_block"
+    "excelsior:raw_chrome_block",
+    "excelsior:chrome_block",
+    "excelsior:raw_uranium_block",
+    "excelsior:du_block",
+    "excelsior:leu_block",
+    "excelsior:heu_block",
+    "excelsior:stainless_block"
   ]
 }

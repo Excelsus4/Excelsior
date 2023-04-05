@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "excelsior:item/crude_castor_oil_bucket"
+  }
+}

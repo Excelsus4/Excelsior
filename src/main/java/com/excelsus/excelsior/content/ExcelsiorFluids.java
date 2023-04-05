@@ -25,13 +25,31 @@ import com.simibubi.create.AllTags;
 import com.tterrag.registrate.util.entry.FluidEntry;
 
 public class ExcelsiorFluids {
-	public static final FluidEntry<ForgeFlowingFluid.Flowing> CASTOR_OIL =
-		REGISTRATE.fluid("castor_oil",
-				Excelsior.asResource("fluid/" + "castor_oil" + "_still"),
-				Excelsior.asResource("fluid/" + "castor_oil" + "_flow"),
+	public static final FluidEntry<ForgeFlowingFluid.Flowing>
+		CRUDE_CASTOR_OIL = REGISTRATE.fluid("crude_castor_oil",
+				Excelsior.asResource("fluid/castor/crude/castor_oil_still"),
+				Excelsior.asResource("fluid/castor/crude/castor_oil_flow"),
 				NoColorFluidAttributes::new)
-			.lang("Castor Oil")
-			.tag(AllTags.forgeFluidTag("castor_oil"))
+			.lang("Crude Castor Oil")
+			.tag(AllTags.forgeFluidTag("crude_castor_oil"))
+			.properties(b -> b.viscosity(120)
+				.density(100))
+			.fluidProperties(p -> p.levelDecreasePerBlock(1)
+				.tickRate(2)
+				.slopeFindDistance(3)
+				.explosionResistance(1f))
+			.source(ForgeFlowingFluid.Source::new)
+			.bucket()
+			.tag(AllTags.forgeItemTag("buckets/crude_castor_oil"))
+			.build()
+			.register(),
+
+		REFINED_CASTOR_OIL = REGISTRATE.fluid("refined_castor_oil",
+				Excelsior.asResource("fluid/castor/refined/castor_oil_still"),
+				Excelsior.asResource("fluid/castor/refined/castor_oil_flow"),
+				NoColorFluidAttributes::new)
+			.lang("Crude Castor Oil")
+			.tag(AllTags.forgeFluidTag("refined_castor_oil"))
 			.properties(b -> b.viscosity(60)
 				.density(80))
 			.fluidProperties(p -> p.levelDecreasePerBlock(1)
@@ -40,7 +58,7 @@ public class ExcelsiorFluids {
 				.explosionResistance(1f))
 			.source(ForgeFlowingFluid.Source::new)
 			.bucket()
-			.tag(AllTags.forgeItemTag("buckets/castor_oil"))
+			.tag(AllTags.forgeItemTag("buckets/refined_castor_oil"))
 			.build()
 			.register();
 
@@ -50,7 +68,7 @@ public class ExcelsiorFluids {
 	public static void registerFluidInteractions() {
 		FluidInteractionRegistry.addInteraction(
 			ForgeMod.LAVA_TYPE.get(), new FluidInteractionRegistry.InteractionInformation(
-				CASTOR_OIL.get().getFluidType(),
+				CRUDE_CASTOR_OIL.get().getFluidType(),
 				fluidState -> {
 					if (fluidState.isSource()) {
 						return Blocks.OBSIDIAN.defaultBlockState();
@@ -60,12 +78,30 @@ public class ExcelsiorFluids {
 					}
 				}
 			));
+
+		FluidInteractionRegistry.addInteraction(
+			ForgeMod.LAVA_TYPE.get(), new FluidInteractionRegistry.InteractionInformation(
+				REFINED_CASTOR_OIL.get().getFluidType(),
+				fluidState -> {
+					// TODO: Make it explode instead of generating stone
+					if (fluidState.isSource()) {
+						return Blocks.OBSIDIAN.defaultBlockState();
+					} else {
+						return Blocks.NETHERRACK
+							.defaultBlockState();
+					}
+				}
+			)
+		);
 	}
 
 	@Nullable
 	public static BlockState getLavaInteraction(FluidState fluidState) {
 		Fluid fluid = fluidState.getType();
-		if (fluid.isSame(CASTOR_OIL.get()))
+		if (fluid.isSame(CRUDE_CASTOR_OIL.get()))
+			return Blocks.NETHERRACK
+				.defaultBlockState();
+		if (fluid.isSame(REFINED_CASTOR_OIL.get()))
 			return Blocks.NETHERRACK
 				.defaultBlockState();
 		return null;

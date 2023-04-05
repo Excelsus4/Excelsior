@@ -10,6 +10,7 @@ import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
@@ -37,6 +38,8 @@ public class ExcelsiorBlocks {
 		REGISTRATE.startSection(AllSections.PALETTES);
 	}
 
+	// ORES
+
 	public static final BlockEntry<Block> CHROME_ORE = REGISTRATE.block("chrome_ore", Block::new)
 		.initialProperties(() -> Blocks.GOLD_ORE)
 		.properties(p -> p.color(MaterialColor.METAL))
@@ -54,15 +57,112 @@ public class ExcelsiorBlocks {
 		.build()
 		.register();
 
+	public static final BlockEntry<Block> URANIUM_ORE = REGISTRATE.block("uranium_ore", Block::new)
+		.initialProperties(() -> Blocks.GOLD_ORE)
+		.properties(p -> p.color(MaterialColor.METAL))
+		.properties(p -> p.requiresCorrectToolForDrops()
+			.sound(SoundType.STONE))
+		.transform(pickaxeOnly())
+		.loot((lt, b) -> lt.add(b,
+			RegistrateBlockLootTables.createSilkTouchDispatchTable(b,
+				RegistrateBlockLootTables.applyExplosionDecay(b, LootItem.lootTableItem(ExcelsiorItems.RAW_URANIUM.get())
+					.apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))))))
+		.tag(BlockTags.NEEDS_IRON_TOOL)
+		.tag(Tags.Blocks.ORES)
+		.transform(tagBlockAndItem("ores/uranium", "ores_in_ground/stone"))
+		.tag(Tags.Items.ORES)
+		.build()
+		.register();
+
+	// STORAGE BLOCKS
+
 	public static final BlockEntry<Block> RAW_CHROME_BLOCK = REGISTRATE.block("raw_chrome_block", Block::new)
 		.initialProperties(() -> Blocks.RAW_GOLD_BLOCK)
 		.properties(p -> p.color(MaterialColor.GLOW_LICHEN))
-		.properties(p -> p.requiresCorrectToolForDrops())
+		.properties(BlockBehaviour.Properties::requiresCorrectToolForDrops)
 		.transform(pickaxeOnly())
 		.tag(Tags.Blocks.STORAGE_BLOCKS)
 		.tag(BlockTags.NEEDS_IRON_TOOL)
 		.lang("Block of Raw Chrome")
 		.transform(tagBlockAndItem("storage_blocks/raw_chrome"))
+		.tag(Tags.Items.STORAGE_BLOCKS)
+		.build()
+		.register();
+
+	public static final BlockEntry<Block> CHROME_BLOCK = REGISTRATE.block("chrome_block", Block::new)
+		.initialProperties(() -> Blocks.RAW_GOLD_BLOCK)
+		.properties(p -> p.color(MaterialColor.GLOW_LICHEN))
+		.properties(BlockBehaviour.Properties::requiresCorrectToolForDrops)
+		.transform(pickaxeOnly())
+		.tag(Tags.Blocks.STORAGE_BLOCKS)
+		.tag(BlockTags.NEEDS_IRON_TOOL)
+		.lang("Block of Chrome")
+		.transform(tagBlockAndItem("storage_blocks/chrome"))
+		.tag(Tags.Items.STORAGE_BLOCKS)
+		.build()
+		.register();
+
+	public static final BlockEntry<Block> RAW_URANIUM_BLOCK = REGISTRATE.block("raw_uranium_block", Block::new)
+		.initialProperties(() -> Blocks.RAW_GOLD_BLOCK)
+		.properties(p -> p.color(MaterialColor.GLOW_LICHEN))
+		.properties(BlockBehaviour.Properties::requiresCorrectToolForDrops)
+		.transform(pickaxeOnly())
+		.tag(Tags.Blocks.STORAGE_BLOCKS)
+		.tag(BlockTags.NEEDS_IRON_TOOL)
+		.lang("Block of Raw Uranium")
+		.transform(tagBlockAndItem("storage_blocks/raw_uranium"))
+		.tag(Tags.Items.STORAGE_BLOCKS)
+		.build()
+		.register();
+
+	public static final BlockEntry<Block> DU_BLOCK = REGISTRATE.block("du_block", Block::new)
+		.initialProperties(() -> Blocks.RAW_GOLD_BLOCK)
+		.properties(p -> p.color(MaterialColor.GLOW_LICHEN))
+		.properties(BlockBehaviour.Properties::requiresCorrectToolForDrops)
+		.transform(pickaxeOnly())
+		.tag(Tags.Blocks.STORAGE_BLOCKS)
+		.tag(BlockTags.NEEDS_IRON_TOOL)
+		.lang("Block of Depleted Uranium")
+		.transform(tagBlockAndItem("storage_blocks/du"))
+		.tag(Tags.Items.STORAGE_BLOCKS)
+		.build()
+		.register();
+
+	public static final BlockEntry<Block> LEU_BLOCK = REGISTRATE.block("leu_block", Block::new)
+		.initialProperties(() -> Blocks.RAW_GOLD_BLOCK)
+		.properties(p -> p.color(MaterialColor.GLOW_LICHEN))
+		.properties(BlockBehaviour.Properties::requiresCorrectToolForDrops)
+		.transform(pickaxeOnly())
+		.tag(Tags.Blocks.STORAGE_BLOCKS)
+		.tag(BlockTags.NEEDS_IRON_TOOL)
+		.lang("Block of LEU")
+		.transform(tagBlockAndItem("storage_blocks/leu"))
+		.tag(Tags.Items.STORAGE_BLOCKS)
+		.build()
+		.register();
+
+	public static final BlockEntry<Block> HEU_BLOCK = REGISTRATE.block("heu_block", Block::new)
+		.initialProperties(() -> Blocks.RAW_GOLD_BLOCK)
+		.properties(p -> p.color(MaterialColor.GLOW_LICHEN))
+		.properties(BlockBehaviour.Properties::requiresCorrectToolForDrops)
+		.transform(pickaxeOnly())
+		.tag(Tags.Blocks.STORAGE_BLOCKS)
+		.tag(BlockTags.NEEDS_IRON_TOOL)
+		.lang("Block of HEU")
+		.transform(tagBlockAndItem("storage_blocks/heu"))
+		.tag(Tags.Items.STORAGE_BLOCKS)
+		.build()
+		.register();
+
+	public static final BlockEntry<Block> STAINLESS_BLOCK = REGISTRATE.block("stainless_block", Block::new)
+		.initialProperties(() -> Blocks.RAW_GOLD_BLOCK)
+		.properties(p -> p.color(MaterialColor.GLOW_LICHEN))
+		.properties(BlockBehaviour.Properties::requiresCorrectToolForDrops)
+		.transform(pickaxeOnly())
+		.tag(Tags.Blocks.STORAGE_BLOCKS)
+		.tag(BlockTags.NEEDS_IRON_TOOL)
+		.lang("Block of Stainless Steel")
+		.transform(tagBlockAndItem("storage_blocks/stainless"))
 		.tag(Tags.Items.STORAGE_BLOCKS)
 		.build()
 		.register();

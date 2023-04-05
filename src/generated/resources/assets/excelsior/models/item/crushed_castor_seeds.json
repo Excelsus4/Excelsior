@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "excelsior:item/castor_oil_bucket"
+    "layer0": "excelsior:item/crushed_castor_seeds"
   }
 }

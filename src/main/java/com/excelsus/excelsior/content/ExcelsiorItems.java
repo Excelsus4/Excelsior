@@ -7,6 +7,7 @@ import static com.simibubi.create.content.AllSections.*;
 
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.BoneMealItem;
 import net.minecraft.world.item.Item;
 
 import com.excelsus.excelsior.Excelsior;
@@ -82,6 +83,16 @@ public class ExcelsiorItems {
 
 	public static final ItemEntry<CastorSeedItem> CASTOR_SEEDS =
 		REGISTRATE.item("castor_seeds", CastorSeedItem::new)
+			.properties(p -> p.stacksTo(64))
+			.register();
+
+	public static final ItemEntry<Item>
+		DRY_CASTOR_SEEDS = ingredient("dry_castor_seeds"),
+		CRUSHED_CASTOR_SEEDS = ingredient("crushed_castor_seeds"),
+		CASTOR_OIL_CAKE = ingredient("castor_oil_cake");
+
+	public static final ItemEntry<BoneMealItem> OIL_CAKE_FERTILIZER =
+		REGISTRATE.item("oil_cake_fertilizer", BoneMealItem::new)
 			.properties(p -> p.stacksTo(64))
 			.register();
 
