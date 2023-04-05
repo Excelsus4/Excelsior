@@ -36,6 +36,7 @@ public class ExcelsiorMixingRecipeGen extends ExcelsiorProcessingRecipeGen {
 	REFINED_CASTOR_OIL = create("refined_castor_oil",
 		b -> b.require(ExcelsiorFluids.CRUDE_CASTOR_OIL.get(), 1000)
 			.output(ExcelsiorFluids.REFINED_CASTOR_OIL.get(), 100)
+			.output(Fluids.WATER, 1000)
 			.requiresHeat(HeatCondition.SUPERHEATED))
 		;
 
