@@ -10,7 +10,7 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import com.excelsus.excelsior.content.ExcelsiorItems;
 
 public class CastorPlantBlock extends CropBlock {
-	public static final int MAX_AGE = 6;
+	public static final int MAX_AGE = 5;
 	public static final IntegerProperty AGE = IntegerProperty.create("age", 0, MAX_AGE);
 
 	public CastorPlantBlock(Properties properties) {

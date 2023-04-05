@@ -12,6 +12,10 @@
     {
       "amount": 100,
       "fluid": "excelsior:refined_castor_oil"
+    },
+    {
+      "amount": 1000,
+      "fluid": "minecraft:water"
     }
   ]
 }
