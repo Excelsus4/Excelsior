@@ -1,8 +1,11 @@
-// 1.19.2	2023-04-05T20:17:14.215887	Excelsior's Processing Recipes
+// 1.19.2	2023-04-05T23:03:43.266764	Excelsior's Processing Recipes
 02d84ac7b176544c50894f9655da30d55735eea5 data/excelsior/recipes/centrifuging/crushed_uranium_ore.json
 da1a6933f06f01c83c9d7a048eca45861bde12ed data/excelsior/recipes/centrifuging/low_enriched_uranium.json
+8bfed358677c8d85aa361a96f9719ca67b10a949 data/excelsior/recipes/compacting/oil_cake_fertilizer.json
 08e03f023631fb51e75c19cca77de09f13e26632 data/excelsior/recipes/crushing/dry_castor_seeds.json
 19fcc9e9a7f4bea134f3708f5b5810752aa28126 data/excelsior/recipes/milling/fish.json
+a321d870195329a3d0dc34af3558ccba1eb29623 data/excelsior/recipes/mixing/crude_castor_oil.json
 8deda3e8045008c14c21168cf59687d4d4cce8c7 data/excelsior/recipes/mixing/fish_cake_soup.json
 880fe9af91308377961830e8d1c2ed1df50c4f0b data/excelsior/recipes/mixing/fish_dough.json
+3fbbe2a8441534e17d411a4f8b2a997502376db7 data/excelsior/recipes/mixing/refined_castor_oil.json
 bb167858d1a1dc811973144381e17153c3c6c804 data/fish_cake_raw/recipes/pressing/fish_dough.json

@@ -1,0 +1,24 @@
+{
+  "type": "create:compacting",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "excelsior:castor_oil_cake"
+    },
+    {
+      "item": "excelsior:castor_oil_cake"
+    },
+    {
+      "item": "excelsior:castor_oil_cake"
+    },
+    {
+      "item": "excelsior:castor_oil_cake"
+    }
+  ],
+  "results": [
+    {
+      "count": 3,
+      "item": "excelsior:oil_cake_fertilizer"
+    }
+  ]
+}

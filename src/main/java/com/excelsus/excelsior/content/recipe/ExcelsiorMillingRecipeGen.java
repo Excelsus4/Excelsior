@@ -1,4 +1,4 @@
-package com.excelsus.excelsior.data.recipe;
+package com.excelsus.excelsior.content.recipe;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.tags.ItemTags;

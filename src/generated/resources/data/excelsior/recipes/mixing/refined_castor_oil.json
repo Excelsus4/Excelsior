@@ -1,0 +1,17 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "superheated",
+  "ingredients": [
+    {
+      "amount": 1000,
+      "fluid": "excelsior:crude_castor_oil",
+      "nbt": {}
+    }
+  ],
+  "results": [
+    {
+      "amount": 100,
+      "fluid": "excelsior:refined_castor_oil"
+    }
+  ]
+}

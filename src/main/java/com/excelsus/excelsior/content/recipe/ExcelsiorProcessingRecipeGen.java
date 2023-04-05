@@ -1,4 +1,4 @@
-package com.excelsus.excelsior.data.recipe;
+package com.excelsus.excelsior.content.recipe;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -32,6 +32,7 @@ public abstract class ExcelsiorProcessingRecipeGen extends ExcelsiorRecipeProvid
 		GENERATORS.add(new ExcelsiorCrushingRecipeGen(gen));
 		GENERATORS.add(new ExcelsiorMillingRecipeGen(gen));
 		GENERATORS.add(new ExcelsiorMixingRecipeGen(gen));
+		GENERATORS.add(new ExcelsiorCompactingRecipeGen(gen));
 		GENERATORS.add(new ExcelsiorPressingRecipeGen(gen));
 
 		gen.addProvider(true, new DataProvider() {

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "cookingtime": 600,
+  "experience": 0.0,
+  "ingredient": {
+    "item": "excelsior:castor_seeds"
+  },
+  "result": "excelsior:dry_castor_seeds"
+}

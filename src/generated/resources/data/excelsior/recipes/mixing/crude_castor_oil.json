@@ -1,0 +1,23 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "superheated",
+  "ingredients": [
+    {
+      "item": "excelsior:crushed_castor_seeds"
+    },
+    {
+      "amount": 1000,
+      "fluid": "minecraft:water",
+      "nbt": {}
+    }
+  ],
+  "results": [
+    {
+      "item": "excelsior:castor_oil_cake"
+    },
+    {
+      "amount": 1000,
+      "fluid": "excelsior:crude_castor_oil"
+    }
+  ]
+}

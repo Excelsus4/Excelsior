@@ -20,8 +20,8 @@ import com.excelsus.excelsior.content.ExcelsiorItems;
 import com.excelsus.excelsior.content.ExcelsiorTileEntities;
 import com.excelsus.excelsior.content.worldgen.ExcelsiorBuiltinRegistration;
 import com.excelsus.excelsior.content.worldgen.ExcelsiorOreFeatureConfigEntries;
-import com.excelsus.excelsior.data.recipe.ExcelsiorProcessingRecipeGen;
-import com.excelsus.excelsior.data.recipe.ExcelsiorStandardRecipeGen;
+import com.excelsus.excelsior.content.recipe.ExcelsiorProcessingRecipeGen;
+import com.excelsus.excelsior.content.recipe.ExcelsiorStandardRecipeGen;
 import com.mojang.logging.LogUtils;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 

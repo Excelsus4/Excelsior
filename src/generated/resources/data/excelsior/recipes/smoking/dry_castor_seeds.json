@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "cookingtime": 100,
+  "experience": 0.0,
+  "ingredient": {
+    "item": "excelsior:castor_seeds"
+  },
+  "result": "excelsior:dry_castor_seeds"
+}

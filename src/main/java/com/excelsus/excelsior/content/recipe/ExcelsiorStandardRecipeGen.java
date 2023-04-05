@@ -1,4 +1,4 @@
-package com.excelsus.excelsior.data.recipe;
+package com.excelsus.excelsior.content.recipe;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,8 +20,6 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.SimpleCookingSerializer;
 import net.minecraft.world.item.crafting.SimpleRecipeSerializer;
 import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
@@ -30,23 +28,20 @@ import net.minecraftforge.common.crafting.conditions.NotCondition;
 import com.excelsus.excelsior.Excelsior;
 import com.excelsus.excelsior.content.ExcelsiorBlocks;
 import com.excelsus.excelsior.content.ExcelsiorItems;
+import com.excelsus.excelsior.content.ExcelsiorSections;
 import com.google.common.base.Supplier;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.simibubi.create.content.AllSections;
-import com.simibubi.create.foundation.data.recipe.CompatMetals;
-import com.simibubi.create.foundation.data.recipe.Mods;
 import com.simibubi.create.foundation.utility.Lang;
 import com.simibubi.create.foundation.utility.RegisteredObjects;
-import com.tterrag.registrate.util.entry.BlockEntry;
-import com.tterrag.registrate.util.entry.ItemEntry;
 import com.tterrag.registrate.util.entry.ItemProviderEntry;
 
 public class ExcelsiorStandardRecipeGen extends ExcelsiorRecipeProvider {
 	private Marker MATERIALS = enterSection(AllSections.MATERIALS);
 	GeneratedRecipe
 
-		RAW_CHROME = create(ExcelsiorItems.RAW_CHROME).returns(9)
+	RAW_CHROME = create(ExcelsiorItems.RAW_CHROME).returns(9)
 		.unlockedBy(ExcelsiorBlocks.RAW_CHROME_BLOCK::get)
 		.viaShapeless(b -> b.requires(ExcelsiorBlocks.RAW_CHROME_BLOCK.get())),
 
@@ -56,13 +51,15 @@ public class ExcelsiorStandardRecipeGen extends ExcelsiorRecipeProvider {
 			.pattern("CCC")
 			.pattern("CCC"));
 
+	private Marker CASTOR = enterSection(ExcelsiorSections.CASTOR);
+
+	GeneratedRecipe
+	DRY_CASTOR_SEEDS = create(ExcelsiorItems.DRY_CASTOR_SEEDS::get).viaCooking(ExcelsiorItems.CASTOR_SEEDS::get).inSmoker();
+
 	private Marker COOKING = enterFolder("/");
 
 	GeneratedRecipe
-	FISH_CAKE = create(ExcelsiorItems.FISH_CAKE::get).viaCooking(ExcelsiorItems.FISH_CAKE_RAW::get).inSmoker()
-
-
-		;
+	FISH_CAKE = create(ExcelsiorItems.FISH_CAKE::get).viaCooking(ExcelsiorItems.FISH_CAKE_RAW::get).inSmoker();
 
 	/*
 	 * End of recipe list
