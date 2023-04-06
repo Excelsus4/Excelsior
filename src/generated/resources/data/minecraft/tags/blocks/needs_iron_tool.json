@@ -1,8 +1,10 @@
 {
   "values": [
-    "excelsior:chrome_ore",
+    "excelsior:chromite_ore",
+    "excelsior:deepslate_chromite_ore",
     "excelsior:uranium_ore",
-    "excelsior:raw_chrome_block",
+    "excelsior:deepslate_uranium_ore",
+    "excelsior:raw_chromite_block",
     "excelsior:chrome_block",
     "excelsior:raw_uranium_block",
     "excelsior:du_block",

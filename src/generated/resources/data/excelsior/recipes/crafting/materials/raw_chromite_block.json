@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "C": {
-      "item": "excelsior:raw_chrome"
+      "item": "excelsior:raw_chromite"
     }
   },
   "pattern": [
@@ -11,6 +11,6 @@
     "CCC"
   ],
   "result": {
-    "item": "excelsior:raw_chrome_block"
+    "item": "excelsior:raw_chromite_block"
   }
 }

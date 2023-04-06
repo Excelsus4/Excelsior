@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "excelsior:item/crushed_chrome_ore"
+    "layer0": "excelsior:item/crushed_chromite_ore"
   }
 }

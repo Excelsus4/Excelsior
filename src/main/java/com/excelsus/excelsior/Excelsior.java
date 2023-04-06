@@ -19,10 +19,10 @@ import com.excelsus.excelsior.content.ExcelsiorItemGroup;
 import com.excelsus.excelsior.content.ExcelsiorItems;
 import com.excelsus.excelsior.content.ExcelsiorTileEntities;
 import com.excelsus.excelsior.content.recipe.ExcelsiorMechanicalCraftingRecipeGen;
-import com.excelsus.excelsior.content.worldgen.ExcelsiorBuiltinRegistration;
-import com.excelsus.excelsior.content.worldgen.ExcelsiorOreFeatureConfigEntries;
+import com.excelsus.excelsior.content.worldgen.ExcelsiorConfiguredFeatures;
 import com.excelsus.excelsior.content.recipe.ExcelsiorProcessingRecipeGen;
 import com.excelsus.excelsior.content.recipe.ExcelsiorStandardRecipeGen;
+import com.excelsus.excelsior.content.worldgen.ExcelsiorPlacedFeatures;
 import com.mojang.logging.LogUtils;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 
@@ -47,8 +47,9 @@ public class Excelsior {
 		ExcelsiorItems.register();
 		ExcelsiorTileEntities.register();
 		ExcelsiorFluids.register();
-		ExcelsiorOreFeatureConfigEntries.init();
-		ExcelsiorBuiltinRegistration.register(modEventBus);
+
+		ExcelsiorConfiguredFeatures.register(modEventBus);
+		ExcelsiorPlacedFeatures.register(modEventBus);
 
 		modEventBus.addListener(EventPriority.LOWEST, Excelsior::gatherData);
 

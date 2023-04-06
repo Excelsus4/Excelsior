@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "excelsior:block/chrome_ore"
+    "all": "excelsior:block/chromite_ore"
   }
 }

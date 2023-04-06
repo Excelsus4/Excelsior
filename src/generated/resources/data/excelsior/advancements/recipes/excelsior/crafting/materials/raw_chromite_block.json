@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "excelsior:raw_chrome"
+              "excelsior:raw_chromite"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "excelsior:crafting/materials/raw_chrome_block"
+        "recipe": "excelsior:crafting/materials/raw_chromite_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "excelsior:crafting/materials/raw_chrome_block"
+      "excelsior:crafting/materials/raw_chromite_block"
     ]
   }
 }

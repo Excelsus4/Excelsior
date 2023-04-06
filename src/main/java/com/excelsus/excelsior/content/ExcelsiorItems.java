@@ -49,7 +49,7 @@ public class ExcelsiorItems {
 		.register();
 
 	public static final ItemEntry<Item>
-		RAW_CHROME = taggedIngredient("raw_chrome", forgeItemTag("raw_materials/chrome"),
+		RAW_CHROMITE = taggedIngredient("raw_chromite", forgeItemTag("raw_materials/chromite"),
 		forgeItemTag("raw_materials")),
 		RAW_URANIUM = taggedIngredient("raw_uranium", forgeItemTag("raw_materials/uranium"),
 			forgeItemTag("raw_materials"));
@@ -77,7 +77,8 @@ public class ExcelsiorItems {
 	public static final ItemEntry<Item>
 		STAINLESS_SHEET = taggedIngredient("stainless_sheet", forgeItemTag("plates/stainless_steel"), PLATES.tag),
 
-		CRUSHED_CHROME = taggedIngredient("crushed_chrome_ore", CRUSHED_ORES.tag);
+	CRUSHED_CHROMITE = taggedIngredient("crushed_chromite_ore", CRUSHED_ORES.tag),
+	CRUSHED_CHROME = taggedIngredient("crushed_chrome", CRUSHED_ORES.tag);
 
 	static {
 		REGISTRATE.startSection(CURIOSITIES);

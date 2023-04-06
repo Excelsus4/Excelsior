@@ -42,7 +42,7 @@ public class ExcelsiorBlocks {
 
 	// ORES
 
-	public static final BlockEntry<Block> CHROME_ORE = REGISTRATE.block("chrome_ore", Block::new)
+	public static final BlockEntry<Block> CHROMITE_ORE = REGISTRATE.block("chromite_ore", Block::new)
 		.initialProperties(() -> Blocks.GOLD_ORE)
 		.properties(p -> p.color(MaterialColor.METAL))
 		.properties(p -> p.requiresCorrectToolForDrops()
@@ -50,11 +50,28 @@ public class ExcelsiorBlocks {
 		.transform(pickaxeOnly())
 		.loot((lt, b) -> lt.add(b,
 			RegistrateBlockLootTables.createSilkTouchDispatchTable(b,
-				RegistrateBlockLootTables.applyExplosionDecay(b, LootItem.lootTableItem(ExcelsiorItems.RAW_CHROME.get())
+				RegistrateBlockLootTables.applyExplosionDecay(b, LootItem.lootTableItem(ExcelsiorItems.RAW_CHROMITE.get())
 					.apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))))))
 		.tag(BlockTags.NEEDS_IRON_TOOL)
 		.tag(Tags.Blocks.ORES)
-		.transform(tagBlockAndItem("ores/chrome", "ores_in_ground/stone"))
+		.transform(tagBlockAndItem("ores/chromite", "ores_in_ground/stone"))
+		.tag(Tags.Items.ORES)
+		.build()
+		.register();
+
+	public static final BlockEntry<Block> DEEPSLATE_CHROMITE_ORE = REGISTRATE.block("deepslate_chromite_ore", Block::new)
+		.initialProperties(() -> Blocks.DEEPSLATE_GOLD_ORE)
+		.properties(p -> p.color(MaterialColor.METAL))
+		.properties(p -> p.requiresCorrectToolForDrops()
+			.sound(SoundType.DEEPSLATE))
+		.transform(pickaxeOnly())
+		.loot((lt, b) -> lt.add(b,
+			RegistrateBlockLootTables.createSilkTouchDispatchTable(b,
+				RegistrateBlockLootTables.applyExplosionDecay(b, LootItem.lootTableItem(ExcelsiorItems.RAW_CHROMITE.get())
+					.apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))))))
+		.tag(BlockTags.NEEDS_IRON_TOOL)
+		.tag(Tags.Blocks.ORES)
+		.transform(tagBlockAndItem("ores/chromite", "ores_in_ground/deepslate"))
 		.tag(Tags.Items.ORES)
 		.build()
 		.register();
@@ -76,17 +93,34 @@ public class ExcelsiorBlocks {
 		.build()
 		.register();
 
+	public static final BlockEntry<Block> DEEPSLATE_URANIUM_ORE = REGISTRATE.block("deepslate_uranium_ore", Block::new)
+		.initialProperties(() -> Blocks.DEEPSLATE_GOLD_ORE)
+		.properties(p -> p.color(MaterialColor.METAL))
+		.properties(p -> p.requiresCorrectToolForDrops()
+			.sound(SoundType.DEEPSLATE))
+		.transform(pickaxeOnly())
+		.loot((lt, b) -> lt.add(b,
+			RegistrateBlockLootTables.createSilkTouchDispatchTable(b,
+				RegistrateBlockLootTables.applyExplosionDecay(b, LootItem.lootTableItem(ExcelsiorItems.RAW_URANIUM.get())
+					.apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))))))
+		.tag(BlockTags.NEEDS_IRON_TOOL)
+		.tag(Tags.Blocks.ORES)
+		.transform(tagBlockAndItem("ores/uranium", "ores_in_ground/deepslate"))
+		.tag(Tags.Items.ORES)
+		.build()
+		.register();
+
 	// STORAGE BLOCKS
 
-	public static final BlockEntry<Block> RAW_CHROME_BLOCK = REGISTRATE.block("raw_chrome_block", Block::new)
+	public static final BlockEntry<Block> RAW_CHROMITE_BLOCK = REGISTRATE.block("raw_chromite_block", Block::new)
 		.initialProperties(() -> Blocks.RAW_GOLD_BLOCK)
 		.properties(p -> p.color(MaterialColor.GLOW_LICHEN))
 		.properties(BlockBehaviour.Properties::requiresCorrectToolForDrops)
 		.transform(pickaxeOnly())
 		.tag(Tags.Blocks.STORAGE_BLOCKS)
 		.tag(BlockTags.NEEDS_IRON_TOOL)
-		.lang("Block of Raw Chrome")
-		.transform(tagBlockAndItem("storage_blocks/raw_chrome"))
+		.lang("Block of Raw Chromite")
+		.transform(tagBlockAndItem("storage_blocks/raw_chromite"))
 		.tag(Tags.Items.STORAGE_BLOCKS)
 		.build()
 		.register();

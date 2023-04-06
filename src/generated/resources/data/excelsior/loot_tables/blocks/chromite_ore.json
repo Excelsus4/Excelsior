@@ -24,7 +24,7 @@
                   }
                 }
               ],
-              "name": "excelsior:chrome_ore"
+              "name": "excelsior:chromite_ore"
             },
             {
               "type": "minecraft:item",
@@ -38,7 +38,7 @@
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "excelsior:raw_chrome"
+              "name": "excelsior:raw_chromite"
             }
           ]
         }

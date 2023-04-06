@@ -41,12 +41,12 @@ public class ExcelsiorStandardRecipeGen extends ExcelsiorRecipeProvider {
 	private Marker MATERIALS = enterSection(AllSections.MATERIALS);
 	GeneratedRecipe
 
-	RAW_CHROME = create(ExcelsiorItems.RAW_CHROME).returns(9)
-		.unlockedBy(ExcelsiorBlocks.RAW_CHROME_BLOCK::get)
-		.viaShapeless(b -> b.requires(ExcelsiorBlocks.RAW_CHROME_BLOCK.get())),
+	RAW_CHROME = create(ExcelsiorItems.RAW_CHROMITE).returns(9)
+		.unlockedBy(ExcelsiorBlocks.RAW_CHROMITE_BLOCK::get)
+		.viaShapeless(b -> b.requires(ExcelsiorBlocks.RAW_CHROMITE_BLOCK.get())),
 
-	RAW_CHROME_BLOCK = create(ExcelsiorBlocks.RAW_CHROME_BLOCK).unlockedBy(ExcelsiorItems.RAW_CHROME::get)
-		.viaShaped(b -> b.define('C', ExcelsiorItems.RAW_CHROME.get())
+	RAW_CHROME_BLOCK = create(ExcelsiorBlocks.RAW_CHROMITE_BLOCK).unlockedBy(ExcelsiorItems.RAW_CHROMITE::get)
+		.viaShaped(b -> b.define('C', ExcelsiorItems.RAW_CHROMITE.get())
 			.pattern("CCC")
 			.pattern("CCC")
 			.pattern("CCC"));

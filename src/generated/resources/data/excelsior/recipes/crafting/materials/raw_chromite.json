@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "excelsior:raw_chrome_block"
+      "item": "excelsior:raw_chromite_block"
     }
   ],
   "result": {
     "count": 9,
-    "item": "excelsior:raw_chrome"
+    "item": "excelsior:raw_chromite"
   }
 }

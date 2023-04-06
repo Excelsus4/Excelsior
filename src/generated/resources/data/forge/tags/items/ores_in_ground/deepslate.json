@@ -1,8 +1,6 @@
 {
   "values": [
-    "excelsior:chromite_ore",
     "excelsior:deepslate_chromite_ore",
-    "excelsior:uranium_ore",
     "excelsior:deepslate_uranium_ore"
   ]
 }
