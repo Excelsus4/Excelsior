@@ -24,13 +24,16 @@ import net.minecraftforge.items.wrapper.CombinedInvWrapper;
 import net.minecraftforge.items.wrapper.RecipeWrapper;
 
 import com.excelsus.excelsior.content.ExcelsiorRecipeTypes;
-import com.simibubi.create.content.contraptions.base.KineticTileEntity;
+import com.simibubi.create.AllRecipeTypes;
+import com.simibubi.create.content.kinetics.base.KineticBlockEntity;
+import com.simibubi.create.content.kinetics.belt.behaviour.DirectBeltInputBehaviour;
+import com.simibubi.create.foundation.advancement.AllAdvancements;
+import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
+import com.simibubi.create.foundation.item.ItemHelper;
 import com.simibubi.create.foundation.sound.SoundScapes;
-import com.simibubi.create.foundation.tileEntity.TileEntityBehaviour;
-import com.simibubi.create.foundation.tileEntity.behaviour.belt.DirectBeltInputBehaviour;
 import com.simibubi.create.foundation.utility.VecHelper;
 
-public class CentrifugeTileEntity extends KineticTileEntity {
+public class CentrifugeTileEntity extends KineticBlockEntity {
 	public ItemStackHandler inputInv;
 	public ItemStackHandler outputInv;
 	public LazyOptional<IItemHandler> capability;
@@ -41,14 +44,14 @@ public class CentrifugeTileEntity extends KineticTileEntity {
 		super(type, pos, state);
 		inputInv = new ItemStackHandler(1);
 		outputInv = new ItemStackHandler(9);
-		capability = LazyOptional.of(CentrifugeInventoryHandler::new);
+		capability = LazyOptional.of(CentrifugeTileEntity.CentrifugeInventoryHandler::new);
 	}
 
 	@Override
-	public void addBehaviours(List<TileEntityBehaviour> behaviours) {
+	public void addBehaviours(List<BlockEntityBehaviour> behaviours) {
 		behaviours.add(new DirectBeltInputBehaviour(this));
 		super.addBehaviours(behaviours);
-		//registerAwardables(behaviours, AllAdvancements.MILLSTONE);
+		//registerAwardables(behaviours, ExcelsiorAdvancements.Centrifuge);
 	}
 
 	@Override
@@ -111,6 +114,19 @@ public class CentrifugeTileEntity extends KineticTileEntity {
 		sendData();
 	}
 
+	@Override
+	public void invalidate() {
+		super.invalidate();
+		capability.invalidate();
+	}
+
+	@Override
+	public void destroy() {
+		super.destroy();
+		ItemHelper.dropContents(level, worldPosition, inputInv);
+		ItemHelper.dropContents(level, worldPosition, outputInv);
+	}
+
 	private void process() {
 		RecipeWrapper inventoryIn = new RecipeWrapper(inputInv);
 
@@ -126,7 +142,7 @@ public class CentrifugeTileEntity extends KineticTileEntity {
 		inputInv.setStackInSlot(0, stackInSlot);
 		lastRecipe.rollResults()
 			.forEach(stack -> ItemHandlerHelper.insertItemStacked(outputInv, stack, false));
-		// award(AllAdvancements.MILLSTONE);
+		//award(ExcelsiorAdvancements.CENTRIFUGE);
 
 		sendData();
 		setChanged();
@@ -182,7 +198,7 @@ public class CentrifugeTileEntity extends KineticTileEntity {
 
 		if (lastRecipe != null && lastRecipe.matches(inventoryIn, level))
 			return true;
-		return ExcelsiorRecipeTypes.CENTRIFUGING.find(inventoryIn, level)
+		return AllRecipeTypes.MILLING.find(inventoryIn, level)
 			.isPresent();
 	}
 
@@ -214,5 +230,6 @@ public class CentrifugeTileEntity extends KineticTileEntity {
 				return ItemStack.EMPTY;
 			return super.extractItem(slot, amount, simulate);
 		}
+
 	}
 }

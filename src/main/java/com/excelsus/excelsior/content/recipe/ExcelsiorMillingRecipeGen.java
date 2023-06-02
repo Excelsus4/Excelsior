@@ -5,7 +5,7 @@ import net.minecraft.tags.ItemTags;
 
 import com.excelsus.excelsior.content.ExcelsiorItems;
 import com.simibubi.create.AllRecipeTypes;
-import com.simibubi.create.foundation.utility.recipe.IRecipeTypeInfo;
+import com.simibubi.create.foundation.recipe.IRecipeTypeInfo;
 
 public class ExcelsiorMillingRecipeGen extends ExcelsiorProcessingRecipeGen{
 	GeneratedRecipe

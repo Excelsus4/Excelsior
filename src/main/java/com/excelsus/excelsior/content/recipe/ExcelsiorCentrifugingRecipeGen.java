@@ -4,8 +4,7 @@ import net.minecraft.data.DataGenerator;
 
 import com.excelsus.excelsior.content.ExcelsiorItems;
 import com.excelsus.excelsior.content.ExcelsiorRecipeTypes;
-import com.simibubi.create.AllItems;
-import com.simibubi.create.foundation.utility.recipe.IRecipeTypeInfo;
+import com.simibubi.create.foundation.recipe.IRecipeTypeInfo;
 
 public class ExcelsiorCentrifugingRecipeGen extends ExcelsiorProcessingRecipeGen {
 	GeneratedRecipe

@@ -22,9 +22,8 @@ import net.minecraftforge.common.Tags;
 import com.excelsus.excelsior.Excelsior;
 import com.excelsus.excelsior.content.blocks.castor.CastorPlantBlock;
 import com.excelsus.excelsior.content.blocks.centrifuge.CentrifugeBlock;
-import com.simibubi.create.content.AllSections;
-import com.simibubi.create.content.contraptions.base.CasingBlock;
-import com.simibubi.create.foundation.block.BlockStressDefaults;
+import com.simibubi.create.content.decoration.encasing.CasingBlock;
+import com.simibubi.create.content.kinetics.BlockStressDefaults;
 import com.simibubi.create.foundation.data.AssetLookup;
 import com.simibubi.create.foundation.data.BuilderTransformers;
 import com.simibubi.create.foundation.data.SharedProperties;
@@ -34,10 +33,6 @@ import com.tterrag.registrate.util.entry.BlockEntry;
 public class ExcelsiorBlocks {
 	static {
 		REGISTRATE.creativeModeTab(() -> Excelsior.EXCELSIOR_CREATIVE_TAB);
-	}
-
-	static {
-		REGISTRATE.startSection(AllSections.PALETTES);
 	}
 
 	// ORES
@@ -203,9 +198,7 @@ public class ExcelsiorBlocks {
 		.build()
 		.register();
 
-	static {
-		REGISTRATE.startSection(AllSections.KINETICS);
-	}
+	// Machinery
 
 	public static final BlockEntry<CentrifugeBlock> CENTRIFUGE = REGISTRATE.block("centrifuge", CentrifugeBlock::new)
 		.initialProperties(SharedProperties::stone)
@@ -224,9 +217,7 @@ public class ExcelsiorBlocks {
 			.lang("Stainless Steel Casing")
 			.register();
 
-	static {
-		REGISTRATE.startSection(ExcelsiorSections.CASTOR);
-	}
+	// Castor Oil
 
 	public static final BlockEntry<CastorPlantBlock> CASTOR_PLANT = REGISTRATE.block("castor_plant",
 			CastorPlantBlock::new)

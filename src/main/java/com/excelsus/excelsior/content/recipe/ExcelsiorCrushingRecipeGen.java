@@ -2,9 +2,8 @@ package com.excelsus.excelsior.content.recipe;
 
 import net.minecraft.data.DataGenerator;
 
-import com.excelsus.excelsior.content.ExcelsiorItems;
 import com.simibubi.create.AllRecipeTypes;
-import com.simibubi.create.foundation.utility.recipe.IRecipeTypeInfo;
+import com.simibubi.create.foundation.recipe.IRecipeTypeInfo;
 
 public class ExcelsiorCrushingRecipeGen extends ExcelsiorProcessingRecipeGen {
 	GeneratedRecipe

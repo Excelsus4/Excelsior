@@ -7,8 +7,8 @@ import net.minecraft.world.level.material.Fluids;
 import com.excelsus.excelsior.content.ExcelsiorFluids;
 import com.excelsus.excelsior.content.ExcelsiorItems;
 import com.simibubi.create.AllRecipeTypes;
-import com.simibubi.create.content.contraptions.processing.HeatCondition;
-import com.simibubi.create.foundation.utility.recipe.IRecipeTypeInfo;
+import com.simibubi.create.content.processing.recipe.HeatCondition;
+import com.simibubi.create.foundation.recipe.IRecipeTypeInfo;
 
 public class ExcelsiorMixingRecipeGen extends ExcelsiorProcessingRecipeGen {
 	GeneratedRecipe

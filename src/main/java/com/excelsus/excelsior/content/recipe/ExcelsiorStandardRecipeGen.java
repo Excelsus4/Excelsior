@@ -28,17 +28,15 @@ import net.minecraftforge.common.crafting.conditions.NotCondition;
 import com.excelsus.excelsior.Excelsior;
 import com.excelsus.excelsior.content.ExcelsiorBlocks;
 import com.excelsus.excelsior.content.ExcelsiorItems;
-import com.excelsus.excelsior.content.ExcelsiorSections;
 import com.google.common.base.Supplier;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import com.simibubi.create.content.AllSections;
 import com.simibubi.create.foundation.utility.Lang;
 import com.simibubi.create.foundation.utility.RegisteredObjects;
 import com.tterrag.registrate.util.entry.ItemProviderEntry;
 
 public class ExcelsiorStandardRecipeGen extends ExcelsiorRecipeProvider {
-	private Marker MATERIALS = enterSection(AllSections.MATERIALS);
+	private Marker MATERIALS = enterSection("materials");
 	GeneratedRecipe
 
 	RAW_CHROME = create(ExcelsiorItems.RAW_CHROMITE).returns(9)
@@ -51,7 +49,7 @@ public class ExcelsiorStandardRecipeGen extends ExcelsiorRecipeProvider {
 			.pattern("CCC")
 			.pattern("CCC"));
 
-	private Marker CASTOR = enterSection(ExcelsiorSections.CASTOR);
+	private Marker CASTOR = enterSection("castor");
 
 	GeneratedRecipe
 	DRY_CASTOR_SEEDS = create(ExcelsiorItems.DRY_CASTOR_SEEDS::get).viaCooking(ExcelsiorItems.CASTOR_SEEDS::get).inSmoker();
@@ -67,8 +65,8 @@ public class ExcelsiorStandardRecipeGen extends ExcelsiorRecipeProvider {
 
 	String currentFolder = "";
 
-	Marker enterSection(AllSections section) {
-		currentFolder = Lang.asId(section.name());
+	Marker enterSection(String section) {
+		currentFolder = Lang.asId(section);
 		return new Marker();
 	}
 

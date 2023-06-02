@@ -3,7 +3,6 @@ package com.excelsus.excelsior.content;
 import static com.excelsus.excelsior.Excelsior.*;
 import static com.simibubi.create.AllTags.*;
 import static com.simibubi.create.AllTags.AllItemTags.*;
-import static com.simibubi.create.content.AllSections.*;
 
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.food.FoodProperties;
@@ -14,7 +13,7 @@ import net.minecraftforge.common.Tags;
 import com.excelsus.excelsior.Excelsior;
 import com.excelsus.excelsior.content.item.CastorSeedItem;
 import com.excelsus.excelsior.content.item.DebugIngotItem;
-import com.simibubi.create.content.curiosities.CombustibleItem;
+import com.simibubi.create.foundation.item.CombustibleItem;
 import com.tterrag.registrate.util.entry.ItemEntry;
 
 public class ExcelsiorItems {
@@ -22,9 +21,7 @@ public class ExcelsiorItems {
 		REGISTRATE.creativeModeTab(() -> Excelsior.EXCELSIOR_CREATIVE_TAB);
 	}
 
-	static {
-		REGISTRATE.startSection(MATERIALS);
-	}
+	// Materials
 
 	public static final ItemEntry<Item>
 		FISH_POWDER = ingredient("fish_powder"),
@@ -77,21 +74,17 @@ public class ExcelsiorItems {
 	public static final ItemEntry<Item>
 		STAINLESS_SHEET = taggedIngredient("stainless_sheet", forgeItemTag("plates/stainless_steel"), PLATES.tag),
 
-	CRUSHED_CHROMITE = taggedIngredient("crushed_chromite_ore", CRUSHED_ORES.tag),
-	CRUSHED_CHROME = taggedIngredient("crushed_chrome", CRUSHED_ORES.tag);
+	CRUSHED_CHROMITE = taggedIngredient("crushed_chromite_ore", CRUSHED_RAW_MATERIALS.tag),
+	CRUSHED_CHROME = taggedIngredient("crushed_chrome", CRUSHED_RAW_MATERIALS.tag);
 
-	static {
-		REGISTRATE.startSection(CURIOSITIES);
-	}
+	// Curiosities
 
 	public static final ItemEntry<DebugIngotItem> DEBUG_INGOT =
 		REGISTRATE.item("debug_ingot", DebugIngotItem::new)
 			.properties(p -> p.stacksTo(1))
 			.register();
 
-	static {
-		REGISTRATE.startSection(ExcelsiorSections.CASTOR);
-	}
+	// Castor
 
 	public static final ItemEntry<CastorSeedItem> CASTOR_SEEDS =
 		REGISTRATE.item("castor_seeds", CastorSeedItem::new)

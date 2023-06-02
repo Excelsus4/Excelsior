@@ -1,4 +1,4 @@
-// 1.19.2	2023-04-07T01:25:47.271211	Registrate Provider for excelsior [Recipes, Advancements, Loot tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.19.2	2023-06-02T16:41:49.560851	Registrate Provider for excelsior [Recipes, Advancements, Loot tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 e4147cb2f99f3a8c1e5ce25355f011caa7e39ca6 assets/excelsior/blockstates/castor_plant.json
 3b60e59008e6119bd150ec0f667326533c5f4a03 assets/excelsior/blockstates/centrifuge.json
 f8af02327ee33354abc34447152ab33a6382e887 assets/excelsior/blockstates/chrome_block.json
@@ -75,7 +75,7 @@ e8766ca1fb167fe6c2167771149f314832652787 assets/excelsior/models/item/yellow_cak
 0f39a256055fa150a76d9103f565b17094a7132b data/create/tags/items/blaze_burner_fuel/special.json
 4158f8cc8e6834e7f276411824da6142c6df31e4 data/create/tags/items/casing.json
 c1f868837ca244e8b87b10a374510ea3efc24480 data/create/tags/items/create_ingots.json
-de1d6748c0f4aa65b16fd364b9fa5c4c97b92c86 data/create/tags/items/crushed_ores.json
+de1d6748c0f4aa65b16fd364b9fa5c4c97b92c86 data/create/tags/items/crushed_raw_materials.json
 0f39a256055fa150a76d9103f565b17094a7132b data/create/tags/items/upright_on_belt.json
 3af777e268bb848cc9022aa380d542a73acc338f data/excelsior/loot_tables/blocks/castor_plant.json
 d9fb823d3e2922efe3d54a508473bf0f717872ee data/excelsior/loot_tables/blocks/centrifuge.json

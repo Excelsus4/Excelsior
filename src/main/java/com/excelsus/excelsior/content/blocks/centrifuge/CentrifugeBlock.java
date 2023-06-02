@@ -21,17 +21,23 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
+import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.ItemStackHandler;
 
+import com.excelsus.excelsior.content.ExcelsiorTileEntities;
+import com.simibubi.create.AllBlockEntityTypes;
 import com.simibubi.create.AllShapes;
-import com.simibubi.create.content.contraptions.base.KineticBlock;
-import com.simibubi.create.content.contraptions.relays.elementary.ICogWheel;
-import com.simibubi.create.foundation.block.ITE;
+import com.simibubi.create.content.kinetics.base.KineticBlock;
+import com.simibubi.create.content.kinetics.millstone.MillstoneBlockEntity;
+import com.simibubi.create.content.kinetics.simpleRelays.ICogWheel;
+import com.simibubi.create.foundation.block.IBE;
 import com.simibubi.create.foundation.item.ItemHelper;
 import com.simibubi.create.foundation.utility.Iterate;
 
-public class CentrifugeBlock extends KineticBlock implements ITE<CentrifugeTileEntity>, ICogWheel {
+public class CentrifugeBlock extends KineticBlock implements IBE<CentrifugeTileEntity>, ICogWheel {
+
 	public CentrifugeBlock(Properties properties) {
 		super(properties);
 	}
@@ -49,15 +55,15 @@ public class CentrifugeBlock extends KineticBlock implements ITE<CentrifugeTileE
 	@Override
 	public InteractionResult use(BlockState state, Level worldIn, BlockPos pos, Player player, InteractionHand handIn,
 		BlockHitResult hit) {
-		if (!player.getItemInHand(handIn).isEmpty()){
+		if (!player.getItemInHand(handIn)
+			.isEmpty())
 			return InteractionResult.PASS;
-		}
 		if (worldIn.isClientSide)
 			return InteractionResult.SUCCESS;
 
-		withTileEntityDo(worldIn, pos, centrifuge -> {
+		withBlockEntityDo(worldIn, pos, centrifuge -> {
 			boolean emptyOutput = true;
-			ItemStackHandler inv = centrifuge.outputInv;
+			IItemHandlerModifiable inv = centrifuge.outputInv;
 			for (int slot = 0; slot < inv.getSlots(); slot++) {
 				ItemStack stackInSlot = inv.getStackInSlot(slot);
 				if (!stackInSlot.isEmpty())
@@ -97,13 +103,13 @@ public class CentrifugeBlock extends KineticBlock implements ITE<CentrifugeTileE
 		CentrifugeTileEntity centrifuge = null;
 		for (BlockPos pos : Iterate.hereAndBelow(entityIn.blockPosition()))
 			if (centrifuge == null)
-				centrifuge = getTileEntity(worldIn, pos);
+				centrifuge = getBlockEntity(worldIn, pos);
 
 		if (centrifuge == null)
 			return;
 
 		ItemEntity itemEntity = (ItemEntity) entityIn;
-		LazyOptional<IItemHandler> capability = centrifuge.getCapability(ForgeCapabilities.ITEM_HANDLER);
+		LazyOptional<IItemHandler> capability = centrifuge.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY);
 		if (!capability.isPresent())
 			return;
 
@@ -117,30 +123,18 @@ public class CentrifugeBlock extends KineticBlock implements ITE<CentrifugeTileE
 	}
 
 	@Override
-	public void onRemove(BlockState state, Level worldIn, BlockPos pos, BlockState newState, boolean isMoving) {
-		if (state.hasBlockEntity() && state.getBlock() != newState.getBlock()) {
-			withTileEntityDo(worldIn, pos, te -> {
-				ItemHelper.dropContents(worldIn, pos, te.inputInv);
-				ItemHelper.dropContents(worldIn, pos, te.outputInv);
-			});
-
-			worldIn.removeBlockEntity(pos);
-		}
-	}
-
-	@Override
 	public Direction.Axis getRotationAxis(BlockState state) {
 		return Direction.Axis.Y;
 	}
 
 	@Override
-	public Class<CentrifugeTileEntity> getTileEntityClass() {
+	public Class<CentrifugeTileEntity> getBlockEntityClass() {
 		return CentrifugeTileEntity.class;
 	}
 
 	@Override
-	public BlockEntityType<? extends CentrifugeTileEntity> getTileEntityType() {
-		return CENTRIFUGE.get();
+	public BlockEntityType<? extends CentrifugeTileEntity> getBlockEntityType() {
+		return ExcelsiorTileEntities.CENTRIFUGE.get();
 	}
 
 	@Override

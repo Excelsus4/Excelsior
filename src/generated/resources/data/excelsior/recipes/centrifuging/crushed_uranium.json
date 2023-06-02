@@ -2,7 +2,7 @@
   "type": "create:centrifuging",
   "ingredients": [
     {
-      "item": "create:crushed_uranium_ore"
+      "item": "create:crushed_raw_uranium"
     }
   ],
   "processingTime": 10000,

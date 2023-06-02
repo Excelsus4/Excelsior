@@ -3,7 +3,7 @@ package com.excelsus.excelsior.content.recipe;
 import net.minecraft.data.DataGenerator;
 
 import com.simibubi.create.AllRecipeTypes;
-import com.simibubi.create.foundation.utility.recipe.IRecipeTypeInfo;
+import com.simibubi.create.foundation.recipe.IRecipeTypeInfo;
 
 public class ExcelsiorItemApplicationRecipeGen extends ExcelsiorProcessingRecipeGen {
 	GeneratedRecipe

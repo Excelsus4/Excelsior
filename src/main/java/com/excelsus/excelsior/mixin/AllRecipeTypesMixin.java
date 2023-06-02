@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.gen.Invoker;
 import com.excelsus.excelsior.content.ExcelsiorRecipeTypes;
 import com.excelsus.excelsior.content.blocks.centrifuge.CentrifugingRecipe;
 import com.simibubi.create.AllRecipeTypes;
-import com.simibubi.create.content.contraptions.processing.ProcessingRecipeBuilder;
+import com.simibubi.create.content.processing.recipe.ProcessingRecipeBuilder;
 
 @Mixin(AllRecipeTypes.class)
 @Unique
